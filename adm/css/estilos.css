@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 32px;
+}
+
+h4 {
+  font-family: monospace;
+  text-align: center;
+  font-size: 17px;
+}
+
+/* nav menu */
+
+.navmenu {
+  background-color: #FC636B;
+  text-align: center;
+  color: white;
+}
+
+.navmenu li a:hover {
+  color: whitesmoke;
+  border-radius: 3px;
+  background-color: rgb(216, 81, 88);
+}
+
+.cardd {
+  text-align: justify;
+}
+
+.banner {
+  border-width: 0px;
+  text-align: center;
+  color: white;
+}
+
+/* images text */
+
+/* Container holding the image and the text */
+
+.container_img {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* images text */
+
+.item-card {
+  width: 265px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 2px;
+  border-width: 3px;
+  background-color: rgb(144, 144, 255);
+  margin: 10px 3px 10px 3px;
+  display: inline-block;
+}
+
+.item-card .card-img-top {
+  border-style: solid;
+  border-radius: 0px;
+  border-width: 0px 0px 3px 0px;
+}
+
+.item-card .card-text {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Estilos da Tabela viagens { */
+    .tabdel {
+        color: #ff0000;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    
+    .tabdel:hover {
+        color: #ce0000;
+    }
+
+    .tabinfo {
+        color: #282828;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .tabinfo:hover {
+        color: #000000;
+    }
+    .tabalter{
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+/* Estilos da Tabela viagens } */

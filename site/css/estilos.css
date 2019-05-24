@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 32px;
+}
+
+h4 {
+  font-family: monospace;
+  text-align: center;
+  font-size: 17px;
+}
+
+/* nav menu */
+
+.navmenu {
+  background-color: #15bdb1;
+  text-align: center;
+  color: white;
+}
+
+.navmenu li a:hover {
+  color: whitesmoke;
+  border-radius: 3px;
+  background-color: #9becf9;
+}
+
+.cardd {
+  text-align: justify;
+}
+
+.banner {
+  border-width: 0px;
+  text-align: center;
+  color: white;
+}
+
+/* images text */
+
+/* Container holding the image and the text */
+
+.container_img {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* images text */
+
+.item-card {
+  width: 265px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 2px;
+  border-width: 3px;
+  background-color: rgb(144, 144, 255);
+  margin: 10px 3px 10px 3px;
+  display: inline-block;
+}
+
+.item-card .card-img-top {
+  border-style: solid;
+  border-radius: 0px;
+  border-width: 0px 0px 3px 0px;
+}
+
+.item-card .card-text {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+/*  SLIDESHOW GALERIA */
+
+.slideshow {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.slideimg {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #15bdb1;
+  opacity: 0.5;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container{
+  font-weight: bold;
+  text-align: center;
+  height: 50%;
+  right: 50%;
+  background-color: #15bdb1;;
+  padding: 2px 16px;
+  color: black;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+footer {   
+  font-family: sans-serif;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  background-color: #15bdb1;
+
+}
+
+.rodape{
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+  border-top-color: black;
+}
+
