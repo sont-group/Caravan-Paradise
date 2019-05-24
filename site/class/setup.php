@@ -49,7 +49,7 @@ class Setup
                                 echo "<a class='dropdown-item' href='login.php?login=nao'>Sair</a>";
                             } else {
                                 echo "<a class='dropdown-item' href='login.php'>login</a>";
-                                echo "<a class='dropdown-item' href='cadastro.php'>Cadastrar</a>";
+                                echo "<a class='dropdown-item' href='user.php'>Cadastrar</a>";
                             }
                             ?>
                         </div>
