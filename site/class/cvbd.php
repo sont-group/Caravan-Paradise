@@ -201,11 +201,15 @@ class Cvbd
             $id_cliente = utf8_encode($row['id_cliente']);
             $cod_viagem = utf8_encode($row['cod_viagem']);
             $quantidade = utf8_encode($row['quantidade']);
-
             $dados[$i++] = array('req' => $req, 'id_cliente' => $id_cliente, 'cod_viagem' => $cod_viagem, 'quantidade' => $quantidade);
           
         }
-        return $dados;
+        if ($i == 0) {
+            return false;
+        }else{
+            return $dados;
+        }
+       
         
     }
 }

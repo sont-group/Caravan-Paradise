@@ -6,74 +6,111 @@ if (isset($_GET['cv'])) {
 }
 
 if ($op == "reservas") {
-    ?>
-    <!DOCTYPE html>
-    <html lang="pt-br">
+    include_once "class/cvbd.php";
+    $cvbd = new Cvbd();
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=100%, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Caravan Paradise</title>
+    include_once('class/setup.php');
+            $setup = new Setup();
+           
+    session_start();
+    $login = $_SESSION['caravanlogin'];
+    $senha = $_SESSION['caravansenha'];
+    $dados = $cvbd->userSelect($login, $senha);
 
-        <!-- Bootstrap core CSS -->
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <!-- estilos -->
-        <link rel="stylesheet" href="css/estilos.css">
-        <!-- Custom fonts-->
-        <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    </head>
+    $reservas = $cvbd->reservations($dados['id']);
+    if ($reservas) {
 
-    <body>
-
-        <?php include_once('class/setup.php');
-        $setup = new Setup();
-        $setup->menu();
 
         ?>
+        <!DOCTYPE html>
+        <html lang="pt-br">
 
-        <br> <br>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=100%, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Caravan Paradise</title>
 
-        <?php
-        include_once "class/cvbd.php";
-        $cvbd = new Cvbd();
-     
-        $login = $_SESSION['caravanlogin'];
-        $senha = $_SESSION['caravansenha'];
-        $dados = $cvbd->userSelect($login, $senha);
+            <!-- Bootstrap core CSS -->
+            <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+            <!-- estilos -->
+            <link rel="stylesheet" href="css/estilos.css">
+            <!-- Custom fonts-->
+            <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+            <!-- tabela CSS-->
+            <link href="tabela/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+        </head>
 
-        $reservas = $cvbd->reservations($dados['id']);
+        <body>
+            <?php  $setup->menu(); ?>
+            <br> <br>
+            <div class=" container mt-4">
+                <br>
+                <h2 class="card">Pacotes Adquiridos</h2>
+            </div>
 
-        foreach ($reservas as $row) {
-            ?>
+            
+
+            <br>
+
             <div class="container mt-5">
-                <div class="card">
-                    <div class="card-body row col-12">
-                    <div class="col-3">req: <?= $row['req']  ?></div>
-                    <div class="col-3">id_cliente: <?= $row['id_cliente']  ?></div>
-                    <div class="col-3">cod_viagem: <?= $row['cod_viagem']  ?></div>
-                    <div class="col-3">quantidade: <?= $row['quantidade']  ?></div>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Req</th>
+                                    <th>Cliente</th>
+                                    <th>Viagem</th>
+                                    <th>Quantidade</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($reservas as $row) {
+                                    $cod = $row['cod_viagem'];
+                                    $viagem = $cvbd->viageminfo($cod);
+
+                                    $req = $row['req'];
+                                    $origem = $viagem['origem'];
+                                    $destino = $viagem['destino'];
+                                    $quantidade = $row['quantidade'];
+                                    $total = $viagem['preco'] * $row['quantidade'];
+
+                                    echo "<tr> <td>$req</td> <td>$origem</td> <td>$destino</td>
+                                <td>$quantidade</td> <td>$total</td> </tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+
             </div>
-        <?php
-    }
 
 
 
-    ?>
+            <!-- Bootstrap core JavaScript -->
+            <script src="js/jquery.js"></script>
+            <script src="bootstrap/js/bootstrap.bundle.js"></script>
+
+            <!-- tabela plugin JavaScript-->
+            <script src="tabela/datatables/jquery.dataTables.js"></script>
+            <script src="tabela/datatables/dataTables.bootstrap4.js"></script>
+            <script src="tabela/demo/datatables-demo.js"></script>
 
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="js/jquery.js"></script>
-        <script src="bootstrap/js/bootstrap.bundle.js"></script>
+        </body>
 
+        </html>
 
-    </body>
-
-    </html>
-
-<?php }
+    <?php
+} else {
+    echo "<script>alert('Nenhum Pacote Adquirido');</script>";
+    echo "<script>javascript:history.go(-1)</script>";
+}
+}
 if ($op == "registrar") {
 
     include_once "class/cvbd.php";
