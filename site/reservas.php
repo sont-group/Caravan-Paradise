@@ -1,12 +1,12 @@
 <?php
-if (isset($_GET['cv'])) {
-    $op = $_GET['cv'];
-} else {
-    $op = "reservas";
-}
+        if (isset($_GET['cv'])) {
+            $op = $_GET['cv'];
+        } else {
+            $op = "reservas";
+        }
 
-if ($op == "reservas") {
-    ?>
+        if ($op == "reservas") {
+            ?>
     <!DOCTYPE html>
     <html lang="pt-br">
 
@@ -22,6 +22,8 @@ if ($op == "reservas") {
         <link rel="stylesheet" href="css/estilos.css">
         <!-- Custom fonts-->
         <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <!-- tabela CSS-->
+        <link href="tabela/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     </head>
 
     <body>
@@ -37,36 +39,61 @@ if ($op == "reservas") {
         <?php
         include_once "class/cvbd.php";
         $cvbd = new Cvbd();
-     
+
         $login = $_SESSION['caravanlogin'];
         $senha = $_SESSION['caravansenha'];
         $dados = $cvbd->userSelect($login, $senha);
 
         $reservas = $cvbd->reservations($dados['id']);
 
-        foreach ($reservas as $row) {
-            ?>
-            <div class="container mt-5">
-                <div class="card">
-                    <div class="card-body row col-12">
-                    <div class="col-3">req: <?= $row['req']  ?></div>
-                    <div class="col-3">id_cliente: <?= $row['id_cliente']  ?></div>
-                    <div class="col-3">cod_viagem: <?= $row['cod_viagem']  ?></div>
-                    <div class="col-3">quantidade: <?= $row['quantidade']  ?></div>
-                    </div>
+
+        ?>
+        <div class="container mt-5">
+            <div class="table-responsive">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Req</th>
+                                <th>Cliente</th>
+                                <th>Viagem</th>
+                                <th>Quantidade</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($reservas as $row) {
+                                $cod = $row['cod_viagem'];
+                                $viagem = $cvbd->viageminfo($cod);
+
+                                $nome = $viagem['nome'];
+                                $origem = $viagem['origem'];
+                                $destino = $viagem['destino'];
+                                $quantidade = $row['quantidade'];
+                                $total = $viagem['preco'] * $row['quantidade'];
+
+                                echo "<tr> <td>$nome</td> <td>$origem</td> <td>$destino</td>
+                                <td>$quantidade</td> <td>$total</td> </tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        <?php
-    }
 
+        </div>
 
-
-    ?>
 
 
         <!-- Bootstrap core JavaScript -->
         <script src="js/jquery.js"></script>
         <script src="bootstrap/js/bootstrap.bundle.js"></script>
+
+        <!-- tabela plugin JavaScript-->
+        <script src="tabela/datatables/jquery.dataTables.js"></script>
+        <script src="tabela/datatables/dataTables.bootstrap4.js"></script>
+        <script src="tabela/demo/datatables-demo.js"></script>
 
 
     </body>
