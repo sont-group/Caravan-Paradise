@@ -28,7 +28,7 @@ class Setup
                         <a class="nav-link active" href="#">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Contato</a>
+                        <a class="nav-link active" href="contato.php">Contato</a>
                     </li>
                     <?php
                     if ($status) {
