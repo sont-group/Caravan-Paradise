@@ -30,7 +30,7 @@
     <div class="card-body card">
         <h2 class="card-title">Caravan Paradise</h2>
         <p class="card-text">
-        Caravan Paradise é uma agência de Turismo que te pode te levar no  lugar onde você sempre sonhou em ir. E com uma experiência incrível e única.<br>
+        Caravan Paradise é uma agência de Viagens que pode te levar no  lugar onde você sempre sonhou em ir. E com uma experiência incrível e única.<br>
         Nossa agência visa trazer o máximo de conforto e a melhor experiência ao seus clientes buscando sempre os melhores e mais desejados lugares para viajar e adquirir novas lembranças e novos desejos para que sua viagem seja única e inesquecível.
 
         </p>
