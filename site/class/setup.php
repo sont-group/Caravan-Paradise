@@ -25,7 +25,7 @@ class Setup
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Sobre</a>
+                        <a class="nav-link active" href="sobre.php">Sobre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="contato.php">Contato</a>

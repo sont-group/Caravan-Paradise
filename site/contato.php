@@ -95,7 +95,8 @@ input[type=submit]:hover {
         <label for="subject">Em que podemos ajudar?</label>
         <textarea id="subject" name="subject" placeholder="Digite sua dúvida..." style="height:200px"></textarea>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Enviar">
+        <br><br>
     </form>
 </div>
   </div>
