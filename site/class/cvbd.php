@@ -168,11 +168,11 @@ class Cvbd
     }
 
 
-    
+
     public function reserve($id_cliente, $cod_viagem, $quantidade)
     {
         $dados = array($id_cliente, $cod_viagem, $quantidade);
-        
+
         $dados = $this->upArray($dados);
         try {
             $dbh = $this->conn();
@@ -202,14 +202,27 @@ class Cvbd
             $cod_viagem = utf8_encode($row['cod_viagem']);
             $quantidade = utf8_encode($row['quantidade']);
             $dados[$i++] = array('req' => $req, 'id_cliente' => $id_cliente, 'cod_viagem' => $cod_viagem, 'quantidade' => $quantidade);
-          
         }
         if ($i == 0) {
             return false;
-        }else{
+        } else {
             return $dados;
         }
-       
-        
+    }
+    //contacting
+
+    public function contacting($nome, $email, $mensagem)
+    {
+        $dados = array($nome, $email, $mensagem);
+        $dados = $this->upArray($dados);
+        try {
+            $dbh = $this->conn();
+            $stmt = $dbh->prepare("INSERT INTO contatos(nome, email, mensagem) VALUES(?,?,?)");
+            $dbh->beginTransaction();
+            $stmt->execute($dados);
+            $dbh->commit();
+        } catch (PDOExecption $e) {
+            // print "Error!: " . $e->getMessage() . "</br>";
+        }
     }
 }

@@ -52,23 +52,14 @@ if ($op == "login") {
                 <label for="senha">Senha</label>
               </div>
             </div>
-            <!-- 
-            <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="remember-me">
-                  Lembrar de mim
-                </label>
-              </div>
-            </div>
-          -->
           
-
+  
             <button class="btn btn-primary btn-block mt-4" type="submit">Confirmar</button>
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="register.html">Registar Conta</a>
-            <a class="d-block small" href="forgot-password.html">Esqueceu a Senha?</a>
+           <!-- <a class="d-block small mt-3" href="register.html">Registar Conta</a> -->
+           <br>
+            <a onclick="javascript:alert('Enviaremos um email para alteração da senha')"class="d-block small" href="">Esqueceu a Senha?</a>
           </div>
         </div>
       </div>

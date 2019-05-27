@@ -10,10 +10,6 @@ class Setup
     <nav class="menu navbar navbar-expand navbar-dark bg-dark static-top">
         <a class="navbar-brand mr-1" href="index.php">Caravan Paradise</a>
 
-        <!-- barra de pesquisa 
-                                                            <div class=" d-md-inline-block  ml-auto mr-0 mr-md-3 my-2 my-md-0"> </div>-->
-
-        <!-- icones -->
         <ul class="navbar-nav ml-auto mr-0 mr-md-3 ">
             <li class="nav-item" style="color:white;">
 
@@ -27,6 +23,7 @@ class Setup
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">Configurações</a>
+                 
                     
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="login.php?login=nao">Sair</a>
