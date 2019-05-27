@@ -21,9 +21,9 @@ if (isset($_GET['cv'])) {
 <body>
     <center>
         <form action="contacting.php?cv=contact" method="post">
-            <label for="fname"><i class="fa fa-user"></i> Nome completo</label>
+            <label for="nome"><i class="fa fa-user"></i> Nome completo</label>
             <br>
-            <input type="text" id="fname" name="nome" placeholder="John M. Doe">
+            <input type="text" id="nome" name="nome" placeholder="John M. Doe">
             <br><br>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <br>
