@@ -42,9 +42,9 @@
 
         <div class="card mt-5">
             <div class="card-body card">
-                <h2 class="card-title">Caravan Paradise</h2>
+                <h2 class="card-title">Pacotes de Viagens</h2>
                 <p class="card-text">
-                    O Caravan Paradise foi idealizado com a proposta de ser, simultaneamente, um sistema de vendas e gerenciamento de viagens e caravanas. O projeto visa facilitar e melhor controlar o funcionamento desse mercado, afim de minimizar possíveis problemas e imprevistos, além de maximizar a experiência dos turistas.
+                  
                 </p>
             </div>
         </div>
