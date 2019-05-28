@@ -155,33 +155,39 @@ if ($op == "configurar") {
                       <form method="post" action="user.php?cv=atualizar">
                           <div class="form-group ">
                               <div class="form-label-group">
+                              <label for="nome">Nome</label>
                                   <input value="<?= $dados['nome'] ?>" name='nome' id="nome" class="form-control" placeholder="Nome" required="required" autofocus="autofocus">
-                                  <label for="nome">Nome</label>
+                                  
                               </div>
                               <div class="form-label-group ">
+                              <label for="email">Email</label>
                                   <input readonly="" value="<?= $dados['email'] ?>" name='email' type="email" id="email" class="form-control" placeholder="Email">
-                                  <label for="email">Email</label>
+                                  
                               </div>
                           </div>
                           <div class="form-group">
                               <div class="form-label-group ">
+                              <label for="telefone">Telefone</label>
                                   <input value="<?= $dados['telefone'] ?>" name='telefone' type="tel" id="telefone" class="form-control" placeholder="Telefone" required="required">
-                                  <label for="telefone">Telefone</label>
+                                  
                               </div>
                               <div class="form-label-group ">
+                              <label for="cpf">CPF</label>
                                   <input readonly="" value="<?= $dados['cpf'] ?>" name='cpf' type="cpf" id="cpf" class="form-control" placeholder="CPF" required="required">
-                                  <label for="cpf">CPF</label>
+                                  
                               </div>
                           </div>
 
                           <div class="form-group">
                               <div class="form-label-group ">
+                              <label for="senha">Senha</label>
                                   <input value="" name='senha' type="password" id="senha" class="form-control" placeholder="Senha" required="required">
-                                  <label for="senha">Senha</label>
+                                  
                               </div>
                               <div class="form-label-group ">
+                              <label for="novasenha">Nova Senha (Opcional)</label>
                                   <input name='novasenha' type="password" id="novasenha" class="form-control" placeholder="Nova Senha" >
-                                  <label for="novasenha">Nova Senha (Opcional)</label>
+                                  
                               </div>
                           </div>
 
