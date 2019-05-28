@@ -38,14 +38,16 @@ if ($op == "login") {
                     <form method="post" action="login.php?login=sim">
                         <div class="form-group">
                             <div class="form-label-group">
+                            <label for="inputEmail">Usuário</label>
                                 <input name='login' id="inputEmail" class="form-control" placeholder="Login" required="required" autofocus="autofocus">
-                                <label for="inputEmail">Login</label>
+                                
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-label-group ">
+                            <label for="senha">Senha</label>
                                 <input name='senha' type="password" id="senha" class="form-control" placeholder="Senha" required="required">
-                                <label for="senha">Senha</label>
+                                
                             </div>
                         </div>
 
