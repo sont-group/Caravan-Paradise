@@ -77,7 +77,7 @@ public function cards($cod)
                     <br>
                     <b>Destino:</b> <br> <?= $dados['destino']; ?>
                     <br>
-                    <b>Preço: </b><?= $dados['preco']; ?>
+                    <b>Preço: </b>R$<?= str_replace(".", ",", $dados['preco']); ?>
                     <br>
                     <a href="viagem.php?cod=<?= $cod[$i]; ?>">
                         <button class="btn btn-primary mt-2"> Ver Mais </button>

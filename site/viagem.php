@@ -43,7 +43,7 @@
                                 <div><b>Origem:</b> <?= $dados['origem'] ?> </div>
                                 <div><b>Destino:</b> <?= $dados['destino'] ?> </div>
                                 <div><b>Hotel:</b> <?= $dados['hotel'] ?> </div>
-                                <div><b>Preço:</b> R$ <?= $dados['preco'] ?> </div>
+                                <div style="color:green;"><b>Preço:</b> R$<?= str_replace(".", ",", $dados['preco']); ?> </div>
                               
                                 <button onclick="window.location.href='reservas.php?cv=registrar&cod=<?= $_GET['cod'] ?>'" class="btn btn-primary mt-2">Reservar</button>
                              
