@@ -35,7 +35,7 @@
         Nós acreditamos na magia das viagens.<br>
         O Caravan Paradise foi conceituado em 2007 em Cruzeiro, no Brasil, por seis amigos universitários: Jhonatan Chagas, Luisa Couto, Mateus Leal, Mateus Leonardo, Vitória Narciso e Pedro Bulhões. Somon um grupo bastante diversificado, mas a nossa cultura é o nosso terreno comum.<br>
         Misture isso com a nossa visão empreendedora, estrutura ágil e horas de trabalho autodeterminadas e você terá a receita vencedora para manter nossos talentos motivados, produtivos e felizes por vir trabalhar todas as manhãs.<br>
-        Com esse sonho a empresa nasceu,com a missão de levar o melhor do mundo, proporcionando o incrível paraíso de viajar ao nossos clientes.<br>
+        Com esse sonho a empresa nasceu, com a missão de levar o melhor do mundo, proporcionando o incrível paraíso de viajar ao nossos clientes.<br>
         Mas o mais legal é que nossos clientes vão para todos os lugares do mundo, mas sempre voltam para o Caravan, onde eles sabem que sempre poderão confiar.<br>
         Porque no fundo, afinal somos como você: AMAMOS VIAJAR!. Nós nascemos com rodinhas nos pés, turbina nos braços e asas na imaginação!
         </p>
