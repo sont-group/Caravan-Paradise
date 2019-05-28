@@ -137,7 +137,7 @@ public function galeria()
     <div>
         <div class="container">
             <div class="slideshow">
-                <h2 style="text-align:center; font-weight: bold">Slideshow Gallery</h2>
+                <h2 style="text-align:center; font-weight: bold">Galeria de Fotos</h2>
 
                 <div class="slideimg">
                     <div class="mySlides">
