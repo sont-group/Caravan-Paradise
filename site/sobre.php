@@ -12,41 +12,47 @@
     <!-- estilos -->
     <link rel="stylesheet" href="css/estilos.css">
     <!-- Custom fonts-->
-  <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<?php include_once('class/setup.php');
+    <?php
+    include_once('class/setup.php');
     $setup = new Setup();
     $setup->menu();
-
     ?>
     <div class="container_img">
         <img src="images/nova-experiencia.jpg" alt="Snow" style="width:100%;">
     </div>
     <br>
     <div class="container">
-<div class="card mt-5">
-    <div class="card-body card">
-        <h2 class="card-title">Caravan Paradise</h2>
-        <p class="card-text">
-        Caravan Paradise é uma agência de Viagens que pode te levar no  lugar onde sempre sonhou em ir, com uma experiência incrível e única.<br>
-        Nossa agência visa trazer o máximo de conforto e a melhor experiência ao seus clientes buscando sempre os melhores e mais desejados lugares para viajar e adquirir novas lembranças e novos desejos para que sua viagem seja única e inesquecível.<br>
-        Nós acreditamos na magia das viagens.<br>
-        O Caravan Paradise foi conceituado em 2007 em Cruzeiro, no Brasil, por seis amigos universitários: Jhonatan Chagas, Luisa Couto, Mateus Leal, Mateus Leonardo, Vitória Narciso e Pedro Bulhões. Somon um grupo bastante diversificado, mas a nossa cultura é o nosso terreno comum.<br>
-        Misture isso com a nossa visão empreendedora, estrutura ágil e horas de trabalho autodeterminadas e você terá a receita vencedora para manter nossos talentos motivados, produtivos e felizes por vir trabalhar todas as manhãs.<br>
-        Com esse sonho a empresa nasceu,com a missão de levar o melhor do mundo, proporcionando o incrível paraíso de viajar ao nossos clientes.<br>
-        Mas o mais legal é que nossos clientes vão para todos os lugares do mundo, mas sempre voltam para o Caravan, onde eles sabem que sempre poderão confiar.<br>
-        Porque no fundo, afinal somos como você: AMAMOS VIAJAR!. Nós nascemos com rodinhas nos pés, turbina nos braços e asas na imaginação!
-        </p>
+        <div class="card mt-5">
+            <div class="card-body card">
+                <h2 class="card-title">Caravan Paradise</h2>
+                <p class="card-text">
+                    Caravan Paradise é uma agência de Viagens que pode te levar no lugar onde sempre sonhou em ir, com uma experiência incrível e única.<br>
+                    Nossa agência visa trazer o máximo de conforto e a melhor experiência ao seus clientes buscando sempre os melhores e mais desejados lugares para viajar e adquirir novas lembranças e novos desejos para que sua viagem seja única e inesquecível.<br>
+                    Nós acreditamos na magia das viagens.<br>
+                    O Caravan Paradise foi conceituado em 2007 em Cruzeiro, no Brasil, por seis amigos universitários: Jhonatan Chagas, Luisa Couto, Mateus Leal, Mateus Leonardo, Vitória Narciso e Pedro Bulhões. Somon um grupo bastante diversificado, mas a nossa cultura é o nosso terreno comum.<br>
+                    Misture isso com a nossa visão empreendedora, estrutura ágil e horas de trabalho autodeterminadas e você terá a receita vencedora para manter nossos talentos motivados, produtivos e felizes por vir trabalhar todas as manhãs.<br>
+                    Com esse sonho a empresa nasceu,com a missão de levar o melhor do mundo, proporcionando o incrível paraíso de viajar ao nossos clientes.<br>
+                    Mas o mais legal é que nossos clientes vão para todos os lugares do mundo, mas sempre voltam para o Caravan, onde eles sabem que sempre poderão confiar.<br>
+                    Porque no fundo, afinal somos como você: AMAMOS VIAJAR!. Nós nascemos com rodinhas nos pés, turbina nos braços e asas na imaginação!
+                </p>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 
     <br><br>
 
     <?php
     $setup->footer();
     ?>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    
 </body>
+
 </html>
