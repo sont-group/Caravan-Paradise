@@ -56,7 +56,7 @@
         <div class="center">
 
             <?php
-            $setup->cards(array(1,1,1,1));
+            $setup->cards(array(1,5,6,7,8,11,12,13));
             ?>
 
 

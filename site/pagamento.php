@@ -13,219 +13,206 @@
   <link rel="stylesheet" href="css/estilos.css">
   <!-- Custom fonts-->
   <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-</head>
+  <!-- Import fonts-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-  .checkrow {
-    display: -ms-flexbox;
-    /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap;
-    /* IE10 */
-    flex-wrap: wrap;
-    margin: 0 -16px;
-  }
-
-  .col-25 {
-    -ms-flex: 25%;
-    /* IE10 */
-    flex: 25%;
-  }
-
-  .col-50 {
-    -ms-flex: 50%;
-    /* IE10 */
-    flex: 50%;
-  }
-
-  .col-75 {
-    -ms-flex: 75%;
-    /* IE10 */
-    flex: 75%;
-  }
-
-  .col-25,
-  .col-50,
-  .col-75 {
-    padding: 0 16px;
-  }
-
-  .check {
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
-
-  input[type=text] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-
-  label {
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
-  }
-
-  .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
-
-  .btn:hover {
-    background-color: #45a049;
-  }
-
-  span.price {
-    float: right;
-    color: grey;
-  }
-
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-  @media (max-width: 800px) {
-    .checkrow {
-      flex-direction: column-reverse;
+  <style>
+    /*Pagamento*/
+    .row {
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap;
+      /* IE10 */
+      flex-wrap: wrap;
+      margin: 0 -16px;
+      font-family: Arial;
+      font-size: 17px;
+      padding: 8px;
+      box-sizing: border-box;
     }
 
     .col-25 {
-      margin-bottom: 20px;
+      -ms-flex: 20%;
+      /* IE10 */
+      flex: 20%;
     }
-  }
-</style>
+
+    .col-50 {
+      -ms-flex: 50%;
+      /* IE10 */
+      flex: 50%;
+    }
+
+    .col-75 {
+      -ms-flex: 70%;
+      /* IE10 */
+      flex: 70%;
+    }
+
+    .col-25,
+    .col-50,
+    .col-75 {
+      padding: 0 40px;
+    }
+
+    .pagamento-box {
+      background-color: #f2f2f2;
+      padding: 5px 20px 15px 20px;
+      border: px solid lightgrey;
+      border-radius: 3px;
+    }
+
+    input[type=text] {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    label {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .icon-container {
+      margin-bottom: 20px;
+      padding: 7px 0;
+      font-size: 24px;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    a {
+      color: #2196F3;
+    }
+
+    hr {
+      border: 1px solid lightgrey;
+    }
+
+    span.price {
+      float: right;
+      color: grey;
+    }
+
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+    @media (max-width: 800px) {
+      .row {
+        flex-direction: column-reverse;
+      }
+
+      .col-25 {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+</head>
 
 <body>
-
   <?php include_once('class/setup.php');
   $setup = new Setup();
   $setup->menu();
-
   ?>
+  <br><br><br><br>
+  <div class="row">
+    <div class="col-75">
+      <div class="pagamento-box">
+        <form action="/action_page.php">
 
-<br><br><br><br>
+          <div class="row">
+            <div class="col-50">
+              <h3>Billing Address</h3>
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="john@example.com">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city" placeholder="New York">
 
-
-  <div class="container">
-
-    <div class="row checkrow">
-      <div class="col-75">
-        <div class="container check">
-          <form action="/action_page.php">
-
-            <div class="row checkrow">
-              <div class="col-50">
-                <h3>Dados pessoais</h3>
-                <label for="fname"><i class="fa fa-user"></i> Nome Completo </label>
-                <input type="text" id="fname" name="firstname" placeholder="Jhonatan Luiz">
-                <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <input type="text" id="email" name="email" placeholder="john@example.com">
-                <label for="adr"><i class="fa fa-address-card-o"></i> CPF </label>
-                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
-                <label for="city"><i class="fa fa-institution"></i> Telefone </label>
-                <input type="text" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-
-                <div class="row checkrow">
-                  <div class="col-50">
-                    
-                  </div>
-                  <div class="col-50">
-                    
-                  </div>
+              <div class="row">
+                <div class="col-50">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" placeholder="NY">
+                </div>
+                <div class="col-50">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" placeholder="10001">
                 </div>
               </div>
-
-              <div class="col-50">
-                <h3>Forma de pagamento</h3>
-                <label for="fname">Cartão de Crédito</label>
-                <div class="icon-container">
-                  
-                  <i class="fab fa-cc-visa" style="color:navy;"></i>
-                  <i class="fab fa-cc-amex" style="color:blue;"></i>
-                  <i class="fab fa-cc-mastercard" style="color:red;"></i>
-                  <i class="fab fa-cc-discover" style="color:orange;"></i>
-                </div>
-                <label for="cname">Nome do proprietário do cartão</label>
-                <input type="text" id="cname" name="cardname" placeholder="Jhonatan Luiz">
-                <label for="ccnum">Numero do cartão</label>
-                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                <label for="expmonth">Mês de validade</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="Setembro">
-
-                <div class="row checkrow">
-                  <div class="col-50">
-                    <label for="expyear">Ano de validade</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2018">
-                  </div>
-                  <div class="col-50">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="352">
-                  </div>
-                </div>
-              </div>
-
             </div>
-            <input type="submit" value="Finalizar compra" class="btn">
-          </form>
-        </div>
-      </div>
 
-      <div class="col-25">
-        <div class="container check">
-          <h4>Reserva(s)
-            <span class="price" style="color:black">
-              <i class="fa fa-shopping-cart"></i>
-              <b>4</b>
-            </span>
-          </h4>
-          <p><a href="#">Reserva 1</a> <span class="price">R$ 1.500</span></p>
-          <p><a href="#">Reserva 2</a> <span class="price">R$ 2.700</span></p>
-          <p><a href="#">Reserva 3</a> <span class="price">R$ 3.500</span></p>
-          <p><a href="#">Reserva 4</a> <span class="price">R$ 5.000</span></p>
-          <hr>
-          <p>Total <span class="price" style="color:black"><b>R$ 12.700‬</b></span></p>
-        </div>
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="September">
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="352">
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <label>
+            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+          </label>
+          <input type="submit" value="Continue to checkout" class="btn">
+        </form>
       </div>
     </div>
-
-
+    <div class="col-25">
+      <div class="pagamento-box">
+        <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+        <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+        <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+        <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+        <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+      </div>
+    </div>
   </div>
+  <br><br>
 
-
-
-
-  <br><br><br>
-
-
-  <br>
-  <div class="center">
-
-    <?php
-    $setup->footer();
-    ?>
-
-  </div>
-
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="js/jquery.js"></script>
-  <script src="bootstrap/js/bootstrap.bundle.js"></script>
-
-
+  <?php
+  $setup->footer();
+  ?>
 
 </body>
 
