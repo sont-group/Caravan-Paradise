@@ -29,7 +29,7 @@ if (isset($_GET['cv'])) {
       html {
         height: 100%;
         margin: 0;
-        /*font-family: Arial, Helvetica, sans-serif;*/
+
       }
 
       .hero-image {
@@ -44,6 +44,7 @@ if (isset($_GET['cv'])) {
       .hero-text {
         text-align: center;
         position: absolute;
+        font-size: 18px;
         top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
