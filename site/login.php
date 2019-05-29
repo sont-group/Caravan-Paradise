@@ -28,6 +28,9 @@ if ($op == "login") {
 
 
     </head>
+    <form> 
+<input type="button" value="Voltar" onClick="history.go(-1)"> 
+    </form>
 
     <body class="bg-dark">
 

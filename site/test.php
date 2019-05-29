@@ -48,6 +48,9 @@
 
 
     ?>
+    <input type="button" value="Voltar" onClick="history.go(-1)"> 
+<input type="button" value="Avançar" onCLick="history.forward()"> 
+<input type="button" value="Atualizar" onClick="history.go(0)"> 
 
     <div id="wrap">
         <div id="main">
