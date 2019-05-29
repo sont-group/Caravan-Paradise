@@ -166,22 +166,22 @@ public function galeria()
 
                     <div class="mySlides">
                         <div class="numbertext">3 / 6</div>
-                        <img src="galeria/img_mountains_wide.jpg" style="width:100%">
+                        <img src="galeria/china-pequim.png" style="width:100%">
                     </div>
 
                     <div class="mySlides">
                         <div class="numbertext">4 / 6</div>
-                        <img src="galeria/img_lights_wide.jpg" style="width:100%">
+                        <img src="galeria/disney.png" style="width:100%">
                     </div>
 
                     <div class="mySlides">
                         <div class="numbertext">5 / 6</div>
-                        <img src="galeria/img_nature_wide.jpg" style="width:100%">
+                        <img src="galeria/bahamas.png" style="width:100%">
                     </div>
 
                     <div class="mySlides">
                         <div class="numbertext">6 / 6</div>
-                        <img src="galeria/img_snow_wide.jpg" style="width:100%">
+                        <img src="galeria/santiago.png" style="width:100%">
                     </div>
 
                     <a class="ant" onclick="plusSlides(-1)">❮</a>
@@ -197,19 +197,19 @@ public function galeria()
                                 <img class="demo cursor" src="galeria/hong-kong.png" style="width:100%" onclick="currentSlide(1)" alt="Hong Kong">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/londres-inglaterra.png" style="width:100%" onclick="currentSlide(2)" alt="Londres - Inglaterra">
+                                <img class="demo cursor" src="galeria/londres-inglaterra.png" style="width:100%" onclick="currentSlide(2)" alt="Londres">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                                <img class="demo cursor" src="galeria/china-pequim.png" style="width:100%" onclick="currentSlide(3)" alt="Pequim">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                                <img class="demo cursor" src="galeria/disney.png" style="width:100%" onclick="currentSlide(4)" alt="Disney">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                                <img class="demo cursor" src="galeria/bahamas.png" style="width:100%" onclick="currentSlide(5)" alt="BahamasS">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                                <img class="demo cursor" src="galeria/santiago.png" style="width:100%" onclick="currentSlide(6)" alt="Santiago">
                             </div>
                         </div>
                     </div>
