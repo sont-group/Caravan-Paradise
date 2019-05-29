@@ -142,12 +142,12 @@ public function galeria()
                 <div class="slideimg">
                     <div class="mySlides">
                         <div class="numbertext">1 / 6</div>
-                        <img src="galeria/img_woods_wide.jpg" style="width:100%">
+                        <img src="galeria/hong-kong.png" style="width:100%">
                     </div>
 
                     <div class="mySlides">
                         <div class="numbertext">2 / 6</div>
-                        <img src="galeria/img_5terre_wide.jpg" style="width:100%">
+                        <img src="galeria/londres-inglaterra.png" style="width:100%">
                     </div>
 
                     <div class="mySlides">
@@ -180,10 +180,10 @@ public function galeria()
                     <div class="row">
                         <div class="container">
                             <div class="column ">
-                                <img class="demo cursor" src="galeria/img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                                <img class="demo cursor" src="galeria/hong-kong.png" style="width:100%" onclick="currentSlide(1)" alt="Hong Kong">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                                <img class="demo cursor" src="galeria/londres-inglaterra.png" style="width:100%" onclick="currentSlide(2)" alt="Londres - Inglaterra">
                             </div>
                             <div class="column">
                                 <img class="demo cursor" src="galeria/img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
