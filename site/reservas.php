@@ -46,7 +46,7 @@ if ($op == "reservas") {
             <br> <br>
             <div class=" container mt-4">
                 <br>
-                <h2 class="card">Pacotes Adquiridos</h2>
+                <h2 class="card">Pacotes de Reservas</h2>
             </div>
 
             
@@ -60,10 +60,9 @@ if ($op == "reservas") {
                             <thead>
                                 <tr>
                                     <th>Req</th>
-                                    <th>Cliente</th>
-                                    <th>Viagem</th>
-                                    <th>Quantidade</th>
-                                    <th>Total</th>
+                                    <th>Destino</th>
+                                    <th>Origem</th>
+                                    <th>Valor</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,13 +72,12 @@ if ($op == "reservas") {
                                     $viagem = $cvbd->viageminfo($cod);
 
                                     $req = $row['req'];
-                                    $origem = $viagem['origem'];
                                     $destino = $viagem['destino'];
-                                    $quantidade = $row['quantidade'];
+                                    $origem = $viagem['origem'];
                                     $total = $viagem['preco'] * $row['quantidade'];
 
-                                    echo "<tr> <td>$req</td> <td>$origem</td> <td>$destino</td>
-                                <td>$quantidade</td> <td>$total</td> </tr>";
+                                    echo "<tr> <td>$req</td> <td>$destino</td> <td>$origem</td>
+                                 <td>$total</td> </tr>";
                                 }
                                 ?>
                             </tbody>
