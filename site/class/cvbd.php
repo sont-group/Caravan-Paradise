@@ -225,4 +225,31 @@ class Cvbd
             // print "Error!: " . $e->getMessage() . "</br>";
         }
     }
+
+    public function search($busca)
+    {
+        $busca = utf8_decode($busca);
+        $conn = $this->conn();
+        $sql = "select * from viagens where nome like '%".$busca."%'";
+        $i = 0;
+        $dados = false;
+        foreach ($conn->query($sql) as $row) {
+            $cod = utf8_encode($row['cod']);
+            $origem = utf8_encode($row['origem']);
+            $destino = utf8_encode($row['destino']);
+            $nome = utf8_encode($row['nome']);
+            $hotel = utf8_encode($row['hotel']);
+            $preco = utf8_encode($row['preco']);
+            $detalhes = utf8_encode($row['detalhes']);
+            $imagens = utf8_encode($row['imagens']);
+            $imagens = $this->ImgExplode($imagens);
+            $dados[$i] = array(
+                'cod' => $cod,
+                'origem' => $origem, 'destino' => $destino, 'nome' => $nome,
+                'hotel' => $hotel, 'preco' => $preco, 'detalhes' => $detalhes, 'imagens' => $imagens
+            );
+            $i++;
+        }
+        return $dados;
+    }
 }

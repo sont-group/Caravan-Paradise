@@ -29,6 +29,8 @@ if (isset($_GET['cv'])) {
       html {
         height: 100%;
         margin: 0;
+        font-family: sans-serif;
+
       }
 
       .hero-image {
