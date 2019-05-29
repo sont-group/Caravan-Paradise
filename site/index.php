@@ -16,33 +16,6 @@
 </head>
 
 <style>
-  .busking {
-    height: 40px;
-    width: 230px;
-    background: rgba(0, 0, 0, 0);
-
-    border-style: solid;
-    border-color: #FFF;
-    border-width: 3px;
-    border-radius: 5px;
-    color: #FFF;
-    font-weight: bold;
-    padding: 4px;
-  }
-
-
-  .busking_btn {
-    border-style: none;
-    background: rgba(0, 0, 0, 0);
-    margin-left: -50px;
-
-  }
-
-  .busking_btn:hover {
-    border-style: none;
-    background: rgba(0, 0, 0, 0);
-  }
-
   ::placeholder {
     color: #FFF;
   }

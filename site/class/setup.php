@@ -67,22 +67,36 @@ public function cards($cod)
     $cvbd = new Cvbd();
     for ($i = 0; $i < count($cod); $i++) {
         $dados = $cvbd->viageminfo($cod[$i]);
+        $nome = $dados['nome'];
+        $origem = $dados['origem'];
+        $destino = $dados['destino'];
+        $preco = str_replace(".", ",", $dados['preco']);
+
+        
+
+        if (strlen($destino) < 22) {
+            $destino = "$destino<br>";
+        }
+       
+        
+        
+
         ?>
         <div class="card item-card">
             <img class="card-img-top" src="../adm/<?= $dados['imagens']['icone'] ?>" alt="Card image">
             <div class="card-body">
-                <h4 class="card-title"><b><?= $dados['nome']; ?></b></h4>
-                <p class="card-text">
-                    <b>Origem: </b> <br><?= $dados['origem']; ?>
+                <h4 class="card-title"><b><?= $nome ?></b></h4>
+                <p class="card-text" style="text-align: justify;">
+                    <b>Origem: </b> <?= $origem ?>
                     <br>
-                    <b>Destino:</b> <br> <?= $dados['destino']; ?>
+                    <b>Destino:</b> <?= $destino ?>
                     <br>
-                    <b>Preço: </b>R$<?= str_replace(".", ",", $dados['preco']); ?>
+                    <b>Preço: </b>R$<?= $preco ?>
                     <br>
-                    <a href="viagem.php?cod=<?= $cod[$i]; ?>">
-                        <button class="btn btn-primary mt-2"> Ver Mais </button>
-                    </a>
                 </p>
+                <a href="viagem.php?cod=<?= $cod[$i]; ?>">
+                    <button class="btn btn-primary"> Ver Mais </button>
+                </a>
 
 
             </div>

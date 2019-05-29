@@ -219,3 +219,36 @@ footer {
   border-top-color: black;
 }
 
+/* busca banner */
+.busking {
+  height: 40px;
+  width: 230px;
+  background: rgba(0, 0, 0, 0.15);
+  border-style: solid;
+  border-color: #FFF;
+  border-width: 3px;
+  border-radius: 5px;
+  color: #FFF;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.busking:hover{
+  transition: 200ms;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.busking_btn {
+  margin-bottom: 5px;
+  border-style: none;
+  background: rgba(0, 0, 0, 0);
+  margin-left: -50px;
+
+}
+
+.busking_btn:hover {
+  border-style: none;
+  background: rgba(0, 0, 0, 0);
+}
+
+/* busca banner */
