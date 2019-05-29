@@ -72,15 +72,15 @@ public function cards($cod)
             <img class="card-img-top" src="../adm/<?= $dados['imagens']['icone'] ?>" alt="Card image">
             <div class="card-body">
                 <h4 class="card-title"><b><?= $dados['nome']; ?></b></h4>
-                <p class="card-text">
-                    <b>Origem: </b> <br><?= $dados['origem']; ?>
+                <p class="card-text" style="text-align: justify;">
+                    <b>Origem: </b> <?= $dados['origem']; ?>
                     <br>
-                    <b>Destino:</b> <br> <?= $dados['destino']; ?>
+                    <b>Destino:</b> <?= $dados['destino']; ?>
                     <br>
                     <b>Preço: </b>R$<?= str_replace(".", ",", $dados['preco']); ?>
                     <br>
                     <a href="viagem.php?cod=<?= $cod[$i]; ?>">
-                        <button class="btn btn-primary mt-2"> Ver Mais </button>
+                        <button  class="btn btn-primary mt-2"> Ver Mais </button>
                     </a>
                 </p>
 

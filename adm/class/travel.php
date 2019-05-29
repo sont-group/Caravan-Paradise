@@ -6,6 +6,7 @@ class Travel
 
     public function formEdit($nome)
     {
+        $nome = utf8_decode($nome);
         include_once('class/sqbd.php');
         $sqbd = new Sqbd();
         $conn = $sqbd->conn();
