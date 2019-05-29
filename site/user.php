@@ -146,6 +146,10 @@ if ($op == "configurar") {
         <!-- Custom styles for this template-->
         <link href="css/sb-admin.css" rel="stylesheet">
 
+        <script src="js/jquery.js"></script>
+        <script src="js/mask/cpf.js"></script>
+        <script src="js/mask/mascara.js"></script>
+
 
     </head>
 
@@ -172,12 +176,12 @@ if ($op == "configurar") {
                         <div class="form-group">
                             <div class="form-label-group ">
                                 <label for="telefone">Telefone</label>
-                                <input value="<?= $dados['telefone'] ?>" name='telefone' type="tel" id="telefone" class="form-control" placeholder="Telefone" required="required">
+                                <input value="<?= $dados['telefone'] ?>" name='telefone' type="tel" id="telefone" class="form-control" placeholder="Telefone" required="required" onkeypress="mascara(this, '## #########')" pattern="[0-9 -]+" maxlength="12" minlength="11">
 
                             </div>
                             <div class="form-label-group ">
                                 <label for="cpf">CPF</label>
-                                <input readonly="" value="<?= $dados['cpf'] ?>" name='cpf' type="cpf" id="cpf" class="form-control" placeholder="CPF" required="required">
+                                <input readonly="" value="<?= $dados['cpf'] ?>" name='cpf' type="cpf" id="cpf" class="form-control" placeholder="CPF" required="required" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" minlength="11" pattern="[0-9 -.]+">
 
                             </div>
                         </div>
@@ -209,7 +213,6 @@ if ($op == "configurar") {
         </div>
         <br><br><br>
         <!-- Bootstrap core JavaScript -->
-        <script src="js/jquery.js"></script>
         <script src="bootstrap/js/bootstrap.bundle.js"></script>
 
     </body>
