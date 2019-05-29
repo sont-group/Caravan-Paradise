@@ -33,7 +33,7 @@ if (isset($_GET['cv'])) {
       }
 
       .hero-image {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/porto.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("images/porto.jpg");
         height: 110%;
         background-position: center;
         background-repeat: no-repeat;
@@ -45,7 +45,7 @@ if (isset($_GET['cv'])) {
         text-align: center;
         position: absolute;
         font-size: 18px;
-        top: 55%;
+        top: 52%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
@@ -59,22 +59,24 @@ if (isset($_GET['cv'])) {
       select,
       textarea {
         width: 100%;
-        padding: 12px;
+        padding: 10px;
         border: 1px solid #ccc;
-        border-radius: 4px;
+        border-radius: 2px;
         box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
         resize: vertical;
+       /* margin-top: 6px;*/
+        margin-bottom: 15px;
+    
       }
 
       input[type=submit] {
         background-color: #4CAF50;
         color: white;
-        padding: 12px 20px;
+        padding: 10px;
         border: none;
-        border-radius: 4px;
+        border-radius: 5px;
         cursor: pointer;
+        width: 100px;
       }
 
       input[type=submit]:hover {
@@ -82,8 +84,8 @@ if (isset($_GET['cv'])) {
       }
 
       .container-contato {
-        border-radius: 10px;
-        padding: 20px;
+        border-radius: 5px;
+        padding: 10px;
       }
     </style>
   </head>
@@ -96,21 +98,21 @@ if (isset($_GET['cv'])) {
 
     ?>
 
-    <br><br>
+    
 
     <div class="hero-image">
       <div class="hero-text">
-        <h1 style="font-size:50px">Contato</h1>
+        <h1 style="font-size:40px">Contato</h1>
         <div class="container-contato">
           <form action="contato.php?cv=contact" method="post">
-            <label for="nome"><i class="fa fa-user"></i> Nome completo</label>
+            <label for="nome"><i class="fa fa-user "></i> Nome completo</label>
             <input type="text" id="nome" name="nome" placeholder="John M. Doe">
 
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="john@example.com">
 
             <label for="mensagem">Em que podemos ajudar?</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Digite sua dúvida..." style="height:200px"></textarea>
+            <textarea id="mensagem" name="mensagem" placeholder="Digite sua dúvida..." rows="5" ></textarea>
             <input type="submit" value="Enviar">
             <br><br>
           </form>
@@ -121,6 +123,10 @@ if (isset($_GET['cv'])) {
     $setup->footer();
     ?>
   </body>
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/jquery.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+
 
   </html>
 <?php }
