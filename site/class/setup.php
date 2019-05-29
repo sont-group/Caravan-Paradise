@@ -156,7 +156,7 @@ public function galeria()
                 <div class="slideimg">
                     <div class="mySlides">
                         <div class="numbertext">1 / 6</div>
-                        <img src="galeria/hong-kong.png" style="width:100%">
+                        <img src="galeria/china-pequim.png" style="width:100%">
                     </div>
 
                     <div class="mySlides">
@@ -166,7 +166,7 @@ public function galeria()
 
                     <div class="mySlides">
                         <div class="numbertext">3 / 6</div>
-                        <img src="galeria/china-pequim.png" style="width:100%">
+                        <img src="galeria/hong-kong.png" style="width:100%">
                     </div>
 
                     <div class="mySlides">
@@ -194,19 +194,19 @@ public function galeria()
                     <div class="row">
                         <div class="container">
                             <div class="column ">
-                                <img class="demo cursor" src="galeria/hong-kong.png" style="width:100%" onclick="currentSlide(1)" alt="Hong Kong">
+                                <img class="demo cursor" src="galeria/china-pequim.png" style="width:100%" onclick="currentSlide(1)" alt="Pequim">
                             </div>
                             <div class="column">
                                 <img class="demo cursor" src="galeria/londres-inglaterra.png" style="width:100%" onclick="currentSlide(2)" alt="Londres">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/china-pequim.png" style="width:100%" onclick="currentSlide(3)" alt="Pequim">
+                                <img class="demo cursor" src="galeria/hong-kong.png" style="width:100%" onclick="currentSlide(3)" alt="Hong Kong">
                             </div>
                             <div class="column">
                                 <img class="demo cursor" src="galeria/disney.png" style="width:100%" onclick="currentSlide(4)" alt="Disney">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="galeria/bahamas.png" style="width:100%" onclick="currentSlide(5)" alt="BahamasS">
+                                <img class="demo cursor" src="galeria/bahamas.png" style="width:100%" onclick="currentSlide(5)" alt="Bahamas">
                             </div>
                             <div class="column">
                                 <img class="demo cursor" src="galeria/santiago.png" style="width:100%" onclick="currentSlide(6)" alt="Santiago">
