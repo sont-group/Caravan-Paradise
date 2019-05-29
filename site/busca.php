@@ -51,12 +51,18 @@
         <div class="center">
 
             <?php
-   
-            
-            foreach ($dados as $value) {
-                $setup->cards(array($value['cod']));
+
+            if ($dados) {
+                foreach ($dados as $value) {
+                    $setup->cards(array($value['cod']));
+                }
+            }else{
+                echo "Nenhum resultado encontrado para: <br>";
+                echo "<b style='color:red;'>$busca</b>";
             }
-            
+
+
+
             ?>
 
         </div>
