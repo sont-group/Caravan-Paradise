@@ -118,23 +118,26 @@ img {
 }
 
 /* Position the image container (needed to position the left and right arrows) */
+
 .slideimg {
   position: relative;
 }
 
 /* Hide the images by default */
+
 .mySlides {
   display: none;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
+
 .cursor {
   cursor: pointer;
 }
 
 /* Next & previous buttons */
-.ant,
-.prox {
+
+.ant, .prox {
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -150,19 +153,21 @@ img {
 }
 
 /* Position the "next button" to the right */
+
 .prox {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.ant:hover,
-.prox:hover {
+
+.ant:hover, .prox:hover {
   background-color: #15bdb1;
   opacity: 0.5;
 }
 
 /* Number text (1/3 etc) */
+
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -172,12 +177,14 @@ img {
 }
 
 /* Container for image text */
-.caption-container{
+
+.caption-container {
   font-weight: bold;
   text-align: center;
   height: 50%;
   right: 50%;
-  background-color: #15bdb1;;
+  background-color: #15bdb1;
+  ;
   padding: 2px 16px;
   color: black;
 }
@@ -189,37 +196,36 @@ img {
 }
 
 /* Six columns side by side */
+
 .column {
   float: left;
   width: 16.66%;
 }
 
 /* Add a transparency effect for thumnbail images */
+
 .demo {
   opacity: 0.6;
 }
 
-.active,
-.demo:hover {
+.active, .demo:hover {
   opacity: 1;
 }
 
-footer {   
+.rodape {
+  height: 126px;
+  background-color: #15bdb1;
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+  border-top-color: black;
   font-family: sans-serif;
   text-align: center;
   color: black;
   font-size: 15px;
-  background-color: #15bdb1;
-
-}
-
-.rodape{
-  border-style: solid;
-  border-width: 2px 0px 0px 0px;
-  border-top-color: black;
 }
 
 /* busca banner */
+
 .busking {
   height: 40px;
   width: 230px;
@@ -233,7 +239,7 @@ footer {
   padding: 4px;
 }
 
-.busking:hover{
+.busking:hover {
   transition: 200ms;
   background: rgba(0, 0, 0, 0.3);
 }
@@ -243,7 +249,6 @@ footer {
   border-style: none;
   background: rgba(0, 0, 0, 0);
   margin-left: -50px;
-
 }
 
 .busking_btn:hover {
@@ -252,3 +257,30 @@ footer {
 }
 
 /* busca banner */
+
+/* rodape */
+
+html, body {
+  height: 100%;
+}
+
+#tudo {
+  min-height: 100%;
+}
+
+#conteudo {
+  overflow: auto;
+  padding-bottom: 126px;
+  /* this needs to be bigger than footer height*/
+}
+
+#rodape {
+  position: relative;
+  margin-top: -126px;
+  /* negative value of footer height */
+  height: 126px;
+  clear: both;
+
+}
+
+/* rodape */

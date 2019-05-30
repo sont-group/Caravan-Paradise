@@ -72,14 +72,14 @@ public function cards($cod)
         $destino = $dados['destino'];
         $preco = str_replace(".", ",", $dados['preco']);
 
-        
+
 
         if (strlen($destino) < 22) {
             $destino = "$destino<br>";
         }
-       
-        
-        
+
+
+
 
         ?>
         <div class="card item-card">
@@ -224,33 +224,27 @@ public function footer()
     ?>
 
 
-    <div class="Conteudo">
-        <footer class="rodape">
-            <br>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        &copy; 2019 - Caravan Paradise. Todos os direitos reservados.
-                    </div>
-                    <div class="col-2">
-                        <a class="facebook_directin" href="#">
-                            <img width="40px" class="img-fluid" src="images/facebook_icon.png">
-                        </a>
-                        <a class="instagram_icon" href="#">
-                            <img width="40px" class="img-fluid" src="images/instagram-icon.png">
-                        </a>
 
-                    </div>
-
+    <footer class="rodape">
+        <br>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    &copy; 2019 - Caravan Paradise. Todos os direitos reservados.
+                </div>
+                <div class="col-2">
+                    <a class="facebook_directin" href="#">
+                        <img width="40px" class="img-fluid" src="images/facebook_icon.png">
+                    </a>
+                    <a class="instagram_icon" href="#">
+                        <img width="40px" class="img-fluid" src="images/instagram-icon.png">
+                    </a>
                 </div>
             </div>
-            <br>
-
-        </footer>
-
-
-    </div>
+        </div>
+        <br>
+    </footer>
 
 <?php
 }

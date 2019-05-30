@@ -20,75 +20,74 @@
 
 <body>
 
-    <?php include_once('class/setup.php');
-    $setup = new Setup();
-    $setup->menu();
 
-    include_once("class/cvbd.php");
-    $cvbd = new Cvbd();
+    <div id="tudo">
+        <div id="conteudo">
+            <?php include_once('class/setup.php');
+            $setup = new Setup();
+            $setup->menu();
 
-    $busca = $_GET['busca'];
+            include_once("class/cvbd.php");
+            $cvbd = new Cvbd();
 
-    $dados = $cvbd->search($busca);
+            $busca = $_GET['busca'];
 
-    ?>
-
-    <br><br>
-
-
-    <div class="container">
-
-        <div class="card mt-5">
-            <div class="card-body card">
-                <h2 class="card-title">Pacotes de Viagens</h2>
-                <p class="card-text">
-
-                </p>
-            </div>
-        </div>
-    </div>
-
-
-    <br><br>
-    <div class="container">
-        <div class="center">
-
-            <?php
-
-            if ($dados) {
-                foreach ($dados as $value) {
-                    $setup->cards(array($value['cod']));
-                }
-            } else {
-                echo "Nenhum resultado encontrado para: <br>";
-                echo "<b style='color:red;'>$busca</b>";
-            }
-
-
+            $dados = $cvbd->search($busca);
 
             ?>
 
+            <br><br>
+
+
+            <div class="container">
+
+                <div class="card mt-5">
+                    <div class="card-body card">
+                        <h2 class="card-title">Pacotes de Viagens</h2>
+                        <p class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <br><br>
+            <div class="container">
+                <div class="center">
+
+                    <?php
+
+                    if ($dados) {
+                        foreach ($dados as $value) {
+                            $setup->cards(array($value['cod']));
+                        }
+                    } else {
+                        echo "Nenhum resultado encontrado para: <br>";
+                        echo "<b style='color:red;'>$busca</b>";
+                    }
+
+
+
+                    ?>
+
+                </div>
+            </div>
+            <br><br><br>
+
+
+            <br>
+
         </div>
     </div>
-    <br><br><br>
-
-
-    <br>
-    <div class="center">
-
-        <?php
-        $setup->footer();
-        ?>
-
+    <div id="rodape">
+            <?php $setup->footer(); ?>    
     </div>
 
 
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.js"></script>
-
-
-
 
 </body>
 
