@@ -222,10 +222,12 @@
             $viagem = $cvbd->viageminfo($cod);
             $preco = $viagem['preco'];
             $nome = $viagem['nome'];
-            $total = $total + $preco;
+            $total = $total + ($preco * $row['quantidade']);
+            $preco = number_format($preco, 2, ',', '.');
             echo "<p><a href='#'>Reserva $i</a> <span class='price'>R$ $preco </span></p>";
             $i++;
           }
+          $total = number_format($total, 2, ',', '.');
           ?>
           <hr>
           <p>Total <span class="price" style="color:black"><b>R$ <?= $total ?></b></span></p>

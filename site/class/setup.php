@@ -71,7 +71,8 @@ public function cards($cod)
         $nome = $dados['nome'];
         $origem = $dados['origem'];
         $destino = $dados['destino'];
-        $preco = str_replace(".", ",", $dados['preco']);
+        $preco = $dados['preco'];
+        $preco = number_format($preco, 2, ',', '.');
 
 
 
@@ -92,7 +93,7 @@ public function cards($cod)
                     <br>
                     <b>Destino:</b> <?= $destino ?>
                     <br>
-                    <b>Preço: </b>R$<?= $preco ?>
+                    <b>Preço: </b>R$<?= $preco  ?>
                     <br>
                 </p>
                 <a href="viagem.php?cod=<?= $cod[$i]; ?>">
