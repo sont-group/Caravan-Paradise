@@ -137,7 +137,7 @@
   $setup = new Setup();
   $id = $setup->menu();
 
-  echo"<script>alert('$id');</script>";
+  
   $dados = $cvbd->userSelectId($id);
   $reservas = $cvbd->reservations($id);
  
@@ -155,11 +155,11 @@
                 <label for="fname"><i class="fa fa-user"></i> Nome Completo </label>
                 <input type="text" id="fname" name="firstname" placeholder="Jhonatan Luiz" value="<?= $dados['nome'] ?>">
                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <input type="text" id="email" name="email" placeholder="john@example.com">
-                <label for="adr"><i class="fa fa-address-card-o"></i> CPF </label>
-                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
-                <label for="city"><i class="fa fa-institution"></i> Telefone </label>
-                <input type="text" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                <input type="text" id="email" name="email" placeholder="john@example.com" value="<?= $dados['email'] ?>">
+                <label for="adr"><i class="fa fa-address-card"></i> CPF </label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" value="<?= $dados['cpf'] ?>">
+                <label for="city"><i class="fas fa-phone"></i> Telefone </label>
+                <input type="text" id="telefone" name="telefone" placeholder="(00) 00000-0000" value="<?= $dados['telefone'] ?>">
 
                 <div class="row checkrow">
                   <div class="col-50">
@@ -190,9 +190,8 @@
                 <div class="row checkrow">
                   <div class="col-50">
                     <label for="expyear">Ano de validade</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2018">
-                  </div>
-                  <div class="col-50">
+                    <input type="text" id="expyear" name="expyear" placeholder="2019">
+             
                     <label for="cvv">CVV</label>
                     <input type="text" id="cvv" name="cvv" placeholder="352">
                   </div>
@@ -214,9 +213,14 @@
             </span>
           </h4>
           <p><a href="#">Reserva 1</a> <span class="price">R$ 1.500</span></p>
-          <p><a href="#">Reserva 2</a> <span class="price">R$ 2.700</span></p>
-          <p><a href="#">Reserva 3</a> <span class="price">R$ 3.500</span></p>
-          <p><a href="#">Reserva 4</a> <span class="price">R$ 5.000</span></p>
+          <?php
+          $i = 0;
+          foreach ($reservas as $row) {
+            $total = $row['preco'];
+            echo"<p><a href='#'>Reserva $i</a> <span class='price'>R$ $total </span></p>";
+            $i++;
+          }
+          ?>
           <hr>
           <p>Total <span class="price" style="color:black"><b>R$ 12.700‬</b></span></p>
         </div>

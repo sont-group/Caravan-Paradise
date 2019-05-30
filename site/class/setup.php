@@ -6,11 +6,10 @@ class Setup
         include_once('cvbd.php');
         $cvbd = new Cvbd;
         $status = $cvbd->loginStatus();
+        $id = $status[2];
         $cvnome = $status[1];
         $status = $status[0];
-        $id = $status[2];
-
-
+    
         ?>
     <!-- Navigation -->
     <nav class="navmenu navbar navbar-expand-lg navbar-dark fixed-top">
@@ -236,8 +235,16 @@ public function footer()
                     &copy; 2019 - Caravan Paradise. Todos os direitos reservados.
                 </div>
                 <div class="col-4">
-                <aside id="trx_addons_widget_contacts-2" class="column-1_4 widget widget_contacts"><h5 class="widget_title">Contato</h5><div class="contacts_wrap"><div class="contacts_info"><div class="contacts_left"><span class="contacts_address">Rua Cap. Neco, 364 12701350 Cruzeiro (São Paulo)</span></div><div class="contacts_right"><span class="contacts_email"><a href="mailto:http://localhost/Caravan-Paradise/site/index.php">eli@caravanparadise.com.br</a></span><span class="contacts_phone">(12) 3144-5855</span></div></div></div><!-- /.contacts_wrap --></aside>
-            </div>
+                    <aside id="trx_addons_widget_contacts-2" class="column-1_4 widget widget_contacts">
+                        <h5 class="widget_title">Contato</h5>
+                        <div class="contacts_wrap">
+                            <div class="contacts_info">
+                                <div class="contacts_left"><span class="contacts_address">Rua Cap. Neco, 364 12701350 Cruzeiro (São Paulo)</span></div>
+                                <div class="contacts_right"><span class="contacts_email"><a href="mailto:http://localhost/Caravan-Paradise/site/index.php">eli@caravanparadise.com.br</a></span><span class="contacts_phone">(12) 3144-5855</span></div>
+                            </div>
+                        </div><!-- /.contacts_wrap -->
+                    </aside>
+                </div>
                 <div class="col-2">
                     <a class="facebook_directin" href="#">
                         <img width="40px" class="img-fluid" src="images/facebook_icon.png">
