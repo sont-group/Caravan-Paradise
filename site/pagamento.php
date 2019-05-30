@@ -129,9 +129,15 @@
 </head>
 
 <body>
-  <?php include_once('class/setup.php');
+  <?php
+  include_once "class/cvbd.php";
+  $cvbd = new Cvbd();
+
+  include_once('class/setup.php');
   $setup = new Setup();
-  $setup->menu();
+  $id = $setup->menu();
+  $reservas = $cvbd->reservations($id);
+ 
   ?>
   <br><br><br><br>
   <div class="container">
@@ -144,7 +150,7 @@
               <div class="col-50">
                 <h3>Dados pessoais</h3>
                 <label for="fname"><i class="fa fa-user"></i> Nome Completo </label>
-                <input type="text" id="fname" name="firstname" placeholder="Jhonatan Luiz">
+                <input type="text" id="fname" name="firstname" placeholder="Jhonatan Luiz" value="<?= $dados['id'] ?>">
                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
                 <input type="text" id="email" name="email" placeholder="john@example.com">
                 <label for="adr"><i class="fa fa-address-card-o"></i> CPF </label>

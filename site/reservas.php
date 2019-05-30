@@ -16,6 +16,7 @@ if ($op == "reservas") {
     $login = $_SESSION['caravanlogin'];
     $senha = $_SESSION['caravansenha'];
     $dados = $cvbd->userSelect($login, $senha);
+   
 
     $reservas = $cvbd->reservations($dados['id']);
     if ($reservas) {
@@ -50,8 +51,8 @@ if ($op == "reservas") {
             <div class=" container mt-4">
                 <br>
                 <h2 class="card">Pacotes de Reservas</h2>
+                <a class="btn btn-primary" href="pagamento.php"> pagar </a>
             </div>
-
 
 
             <br>

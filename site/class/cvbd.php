@@ -56,13 +56,14 @@ class Cvbd
         $login = utf8_decode($login);
         $senha = utf8_decode($senha);
         $sql = "select * from clientes WHERE email = '$login' and senha = '$senha'";
-        $check = array(false, '');
+        $check = array(false, '','');
         $conn = $this->conn();
         foreach ($conn->query($sql) as $row) {
             if ($row['email'] == $login and $row['senha'] == $senha) {
+                $id = $row['id'];
                 $nome = $row['nome'];
                 $nome =  explode(" ", ucfirst(strtolower($nome)));
-                $check = array(true, $nome[0]);
+                $check = array(true, $nome[0], $id);
                 break;
             }
         }
@@ -73,16 +74,16 @@ class Cvbd
         session_start();
         if (!isset($_SESSION['caravanlogin']) or !isset($_SESSION['caravansenha'])) {
             session_destroy();
-            return array(false, "");
+            return array(false, "", "");
         } else {
             $login = $_SESSION['caravanlogin'];
             $senha = $_SESSION['caravansenha'];
             $check = $this->loginCheck($login, $senha);
             if ($check[0]) {
-                return array(true, $check[1]);
+                return array(true, $check[1], $check[2]);
             } else {
                 session_destroy();
-                return array(false, "");
+                return array(false, "", "");
             }
         }
     }
@@ -135,6 +136,21 @@ class Cvbd
         $senha = utf8_decode($senha);
         $conn = $this->conn();
         $sql = "select * from clientes WHERE email = '$email' and senha = '$senha'";
+        foreach ($conn->query($sql) as $row) {
+            $id = $row['id'];
+            $cpf = utf8_encode($row['cpf']);
+            $nome = utf8_encode($row['nome']);
+            $email = utf8_encode($row['email']);
+            $telefone = utf8_encode($row['telefone']);
+            $dados = array('id' => $id, 'cpf' => $cpf, 'nome' => $nome, 'email' => $email, 'telefone' => $telefone);
+            return $dados;
+        }
+    }
+
+    public function userSelectId($id)
+    {
+        $conn = $this->conn();
+        $sql = "select * from clientes WHERE id = '$id'";
         foreach ($conn->query($sql) as $row) {
             $id = $row['id'];
             $cpf = utf8_encode($row['cpf']);
