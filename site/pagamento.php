@@ -185,7 +185,7 @@
                 <label for="ccnum">Numero do cartão</label>
                 <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
                 <div class="col-12 row">
-                  <div class="col-6">
+                  <div  class="col-6">
                     <label for="expmonth">Validade</label>
                     <input type="text" id="expmonth" name="expmonth" placeholder="mm/aaaa">
                   </div>
