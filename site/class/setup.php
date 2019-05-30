@@ -8,6 +8,7 @@ class Setup
         $status = $cvbd->loginStatus();
         $cvnome = $status[1];
         $status = $status[0];
+        $id = $status[2];
 
 
         ?>
@@ -59,7 +60,8 @@ class Setup
         </div>
     </nav>
 
-<?php
+    <?php
+    return $id;
 }
 public function cards($cod)
 {
