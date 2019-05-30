@@ -137,10 +137,10 @@
   $setup = new Setup();
   $id = $setup->menu();
 
-  
+
   $dados = $cvbd->userSelectId($id);
   $reservas = $cvbd->reservations($id);
- 
+
   ?>
   <br><br><br><br>
   <div class="container">
@@ -184,18 +184,20 @@
                 <input type="text" id="cname" name="cardname" placeholder="Jhonatan Luiz">
                 <label for="ccnum">Numero do cartão</label>
                 <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                <label for="expmonth">Mês de validade</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="Setembro">
-
-                <div class="row checkrow">
-                  <div class="col-50">
-                    <label for="expyear">Ano de validade</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2019">
-             
+                <div class="col-12 row">
+                  <div class="col-6">
+                    <label for="expmonth">Validade</label>
+                    <input type="text" id="expmonth" name="expmonth" placeholder="mm/aaaa">
+                  </div>
+                  <div class="col-6">
                     <label for="cvv">CVV</label>
                     <input type="text" id="cvv" name="cvv" placeholder="352">
                   </div>
                 </div>
+
+
+
+
               </div>
 
             </div>
@@ -209,20 +211,24 @@
           <h4>Reserva(s)
             <span class="price" style="color:black">
               <i class="fa fa-shopping-cart"></i>
-              <b>4</b>
+              <b><?= count($reservas) ?></b>
             </span>
           </h4>
-          <p><a href="#">Reserva 1</a> <span class="price">R$ 1.500</span></p>
           <?php
-          $i = 0;
+          $total = 0;
+          $i = 1;
           foreach ($reservas as $row) {
-            $total = $row['preco'];
-            echo"<p><a href='#'>Reserva $i</a> <span class='price'>R$ $total </span></p>";
+            $cod = $row['cod_viagem'];
+            $viagem = $cvbd->viageminfo($cod);
+            $preco = $viagem['preco'];
+            $nome = $viagem['nome'];
+            $total = $total + $preco;
+            echo "<p><a href='#'>Reserva $i</a> <span class='price'>R$ $preco </span></p>";
             $i++;
           }
           ?>
           <hr>
-          <p>Total <span class="price" style="color:black"><b>R$ 12.700‬</b></span></p>
+          <p>Total <span class="price" style="color:black"><b>R$ <?= $total ?></b></span></p>
         </div>
       </div>
     </div>
