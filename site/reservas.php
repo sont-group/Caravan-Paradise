@@ -16,7 +16,7 @@ if ($op == "reservas") {
     $login = $_SESSION['caravanlogin'];
     $senha = $_SESSION['caravansenha'];
     $dados = $cvbd->userSelect($login, $senha);
-   
+
 
     $reservas = $cvbd->reservations($dados['id']);
     if ($reservas) {
@@ -51,43 +51,72 @@ if ($op == "reservas") {
             <div class=" container mt-4">
                 <br>
                 <h2 class="card">Pacotes de Reservas</h2>
-                <a class="btn btn-primary" href="pagamento.php"> pagar </a>
+
             </div>
 
 
             <br>
 
             <div class="container mt-5">
-                <div class="table-responsive">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Req</th>
-                                    <th>Destino</th>
-                                    <th>Origem</th>
-                                    <th>Valor</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($reservas as $row) {
-                                    $cod = $row['cod_viagem'];
-                                    $viagem = $cvbd->viageminfo($cod);
+                <div class="col-md-12 row">
+                    <div class="col-md-8">
+                        <div class="table-responsive">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Valor</th>
+                                            <th>Qnt</th>
+                                            <th>Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $total = 0;
+                                        foreach ($reservas as $row) {
+                                            $cod = $row['cod_viagem'];
+                                            $viagem = $cvbd->viageminfo($cod);
 
-                                    $req = $row['req'];
-                                    $destino = $viagem['destino'];
-                                    $origem = $viagem['origem'];
-                                    $total = $viagem['preco'] * $row['quantidade'];
+                                            $nome = $viagem['nome'];
+                                            $valor =  $viagem['preco'];
 
-                                    echo "<tr> <td>$req</td> <td>$destino</td> <td>$origem</td>
-                                 <td>$total</td> </tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                                            $quant = $row['quantidade'];
+                                            $subtotal = $valor * $quant;
+                                            $total = $total + $subtotal;
+                                            $subtotal = number_format($subtotal, 2, ',', '.');
+                                            $valor = number_format($valor, 2, ',', '.');
+                                            
+                                            $quants = "<a href='#'><i class='fas fa-minus-circle'></i></a><b> $quant </b><a href='#'><i class='fas fa-plus-circle'></i></a>";
+
+                                            echo "<tr> <td>$nome</td> <td>R$ $valor </td> <td>$quants</td>  <td>R$ $subtotal</td> </tr>";
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+
+                    
+
+                        <div class="card ">
+                            <div class="card-body card">
+                                <h2 class="card-title">Confirmar</h2>
+                                <p class="card-text">
+                                    <div><b>Total <?= number_format($total, 2, ',', '.') ?> </div>
+                                    <br>
+                                    <a class="btn btn-primary" href="pagamento.php"> pagar </a>
+                                  
+
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
 
             </div>
 
@@ -97,10 +126,7 @@ if ($op == "reservas") {
             <script src="js/jquery.js"></script>
             <script src="bootstrap/js/bootstrap.bundle.js"></script>
 
-            <!-- tabela plugin JavaScript-->
-            <script src="tabela/datatables/jquery.dataTables.js"></script>
-            <script src="tabela/datatables/dataTables.bootstrap4.js"></script>
-            <script src="tabela/demo/datatables-demo.js"></script>
+
 
 
         </body>

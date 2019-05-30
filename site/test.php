@@ -66,7 +66,8 @@ if ($op == "reservas") {
                                     <thead>
                                         <tr>
                                             <th>Nome</th>
-                                            <th>Valor * Qnt</th>
+                                            <th>Valor</th>
+                                            <th>Qnt</th>
                                             <th>Subtotal</th>
                                         </tr>
                                     </thead>
@@ -86,9 +87,9 @@ if ($op == "reservas") {
                                             $subtotal = number_format($subtotal, 2, ',', '.');
                                             $valor = number_format($valor, 2, ',', '.');
                                             
+                                            $quants = "<a href='#'><i class='fas fa-minus-circle'></i></a><b> $quant </b><a href='#'><i class='fas fa-plus-circle'></i></a>";
 
-
-                                            echo "<tr> <td>$nome</td> <td>R$ $valor * $quant</td> <td>R$ $subtotal</td> </tr>";
+                                            echo "<tr> <td>$nome</td> <td>R$ $valor </td> <td>$quants</td>  <td>R$ $subtotal</td> </tr>";
                                         }
                                         ?>
                                     </tbody>
