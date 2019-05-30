@@ -86,10 +86,15 @@ if ($op == "reservas") {
                                             $total = $total + $subtotal;
                                             $subtotal = number_format($subtotal, 2, ',', '.');
                                             $valor = number_format($valor, 2, ',', '.');
-                                            
-                                            $quants = "<a href='#'><i class='fas fa-minus-circle'></i></a><b> $quant </b><a href='#'><i class='fas fa-plus-circle'></i></a>";
-
-                                            echo "<tr> <td>$nome</td> <td>R$ $valor </td> <td>$quants</td>  <td>R$ $subtotal</td> </tr>";
+                                                                                 
+                                            ?>
+                                            <tr>
+                                                <td><?= $nome ?></td>
+                                                <td>R$ <?= $valor ?></td>
+                                                <td><a href='#'><i class='fas fa-minus-circle'></i></a><b> <?= $quant ?> </b><a href='#'><i class='fas fa-plus-circle'></i></a></td>
+                                                <td>R$ <?= $subtotal ?></td>
+                                            </tr>
+                                            <?php
                                         }
                                         ?>
                                     </tbody>
