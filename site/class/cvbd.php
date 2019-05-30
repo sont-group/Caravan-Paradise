@@ -56,7 +56,7 @@ class Cvbd
         $login = utf8_decode($login);
         $senha = utf8_decode($senha);
         $sql = "select * from clientes WHERE email = '$login' and senha = '$senha'";
-        $check = array(false, '','');
+        $check = array(false, '', '');
         $conn = $this->conn();
         foreach ($conn->query($sql) as $row) {
             if ($row['email'] == $login and $row['senha'] == $senha) {
@@ -64,7 +64,7 @@ class Cvbd
                 $nome = $row['nome'];
                 $nome =  explode(" ", ucfirst(strtolower($nome)));
                 $check = array(true, $nome[0], $id);
-                
+
                 break;
             }
         }
@@ -80,7 +80,7 @@ class Cvbd
             $login = $_SESSION['caravanlogin'];
             $senha = $_SESSION['caravansenha'];
             $check = $this->loginCheck($login, $senha);
-            if ($check[0]) {                
+            if ($check[0]) {
                 return array(true, $check[1], $check[2]);
             } else {
                 session_destroy();
@@ -226,6 +226,27 @@ class Cvbd
             return $dados;
         }
     }
+
+    public function reservetion($id_cliente, $cod_viagem)
+    {
+        $i = 0;
+        $conn = $this->conn();
+        $sql = "select * from pacotes WHERE id_cliente = '$id_cliente' and cod_viagem = '$cod_viagem'";
+        foreach ($conn->query($sql) as $row) {
+            $req = $row['req'];
+            $id_cliente = utf8_encode($row['id_cliente']);
+            $cod_viagem = utf8_encode($row['cod_viagem']);
+            $quantidade = utf8_encode($row['quantidade']);
+            $dados = array('req' => $req, 'id_cliente' => $id_cliente, 'cod_viagem' => $cod_viagem, 'quantidade' => $quantidade);
+            $i++;
+        }
+        if ($i == 0) {
+            return array(false, "");
+        } else {
+            return array(true, $dados);
+        }
+    }
+
     //contacting
 
     public function contacting($nome, $email, $mensagem)
@@ -247,7 +268,7 @@ class Cvbd
     {
         $busca = utf8_decode($busca);
         $conn = $this->conn();
-        $sql = "select * from viagens where nome like '%".$busca."%'";
+        $sql = "select * from viagens where nome like '%" . $busca . "%'";
         $i = 0;
         $dados = false;
         foreach ($conn->query($sql) as $row) {
@@ -268,5 +289,53 @@ class Cvbd
             $i++;
         }
         return $dados;
+    }
+
+    public function viagemReq($req)
+    {
+        $i = 0;
+        $conn = $this->conn();
+        $sql = "select * from pacotes WHERE req = '$req'";
+        foreach ($conn->query($sql) as $row) {
+            $req = $row['req'];
+            $id_cliente = utf8_encode($row['id_cliente']);
+            $cod_viagem = utf8_encode($row['cod_viagem']);
+            $quantidade = utf8_encode($row['quantidade']);
+            $dados = array('req' => $req, 'id_cliente' => $id_cliente, 'cod_viagem' => $cod_viagem, 'quantidade' => $quantidade);
+            $i++;
+        }
+        if ($i == 0) {
+            return array(false, "");
+        } else {
+            return array(true, $dados);
+        }
+    }
+
+    public function viagemPlus($req, $value)
+    {
+        $conn = $this->conn();
+        try {
+            $stmt = $conn->prepare('UPDATE pacotes SET quantidade = quantidade + ' . $value . ' WHERE req = :req');
+            $stmt->execute(array(
+                ':req' => $req
+            ));
+
+           $test = $this->viagemReq($req);
+            if ($test[1]['quantidade'] == 0) {
+                $conn = $this->conn();
+                try {
+                    $stmt = $conn->prepare('DELETE FROM pacotes WHERE req = :req');
+                    $stmt->bindParam(':req', $req);
+                    $stmt->execute();
+                    // echo $stmt->rowCount();
+                } catch (PDOException $e) {
+                    // echo 'Error: ' . $e->getMessage();
+                }
+
+            }
+            // echo $stmt->rowCount();
+        } catch (PDOException $e) {
+            // echo 'Error: ' . $e->getMessage();
+        }
     }
 }

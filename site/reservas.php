@@ -75,6 +75,7 @@ if ($op == "reservas") {
                                         <?php
                                         $total = 0;
                                         foreach ($reservas as $row) {
+                                            $req = $row['req'];
                                             $cod = $row['cod_viagem'];
                                             $viagem = $cvbd->viageminfo($cod);
 
@@ -86,17 +87,19 @@ if ($op == "reservas") {
                                             $total = $total + $subtotal;
                                             $subtotal = number_format($subtotal, 2, ',', '.');
                                             $valor = number_format($valor, 2, ',', '.');
-                                                                                 
-                                            ?>
-                                            <tr>
-                                                <td><?= $nome ?></td>
-                                                <td>R$ <?= $valor ?></td>
-                                                <td><a href='#'><i class='fas fa-minus-circle'></i></a><b> <?= $quant ?> </b><a href='#'><i class='fas fa-plus-circle'></i></a></td>
-                                                <td>R$ <?= $subtotal ?></td>
-                                            </tr>
+                                            if ($quant > 0) {
+
+                                                ?>
+                                                <tr>
+                                                    <td><?= $nome ?></td>
+                                                    <td>R$ <?= $valor ?></td>
+                                                    <td><a href='reservas.php?cv=menos&req=<?= $req ?>'><i style='color: blue;' class='fas fa-minus-circle'></i></a><b> <?= $quant ?> </b><a href='reservas.php?cv=mais&req=<?= $req ?>'><i style='color: green;' class='fas fa-plus-circle'></i></a></td>
+                                                    <td>R$ <?= $subtotal ?></td>
+                                                </tr>
                                             <?php
                                         }
-                                        ?>
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -105,7 +108,7 @@ if ($op == "reservas") {
                     </div>
                     <div class="col-md-4">
 
-                    
+
 
                         <div class="card ">
                             <div class="card-body card">
@@ -114,7 +117,7 @@ if ($op == "reservas") {
                                     <div><b>Total <?= number_format($total, 2, ',', '.') ?> </div>
                                     <br>
                                     <a class="btn btn-primary" href="pagamento.php"> pagar </a>
-                                  
+
 
                                 </p>
                             </div>
@@ -145,27 +148,56 @@ if ($op == "reservas") {
 }
 }
 if ($op == "registrar") {
-
     include_once "class/cvbd.php";
     $cvbd = new Cvbd();
-
     $status = $cvbd->loginStatus();
     if ($status[0]) {
         $cvlogin = $_SESSION['caravanlogin'];
         $cvsenha = $_SESSION['caravansenha'];
         $user = $cvbd->userSelect($cvlogin, $cvsenha);
-
         $cod_viagem =  $_GET['cod'];
         $id_cliente =  $user['id'];
+
         $quantidade = 1;
 
-        $cvbd->reserve($id_cliente, $cod_viagem, $quantidade);
-        echo "<script>alert('Adicionado a lista de reservas');</script>";
-        echo "<script>javascript:history.go(-1)</script>";
+        $reservetion = $cvbd->reservetion($id_cliente, $cod_viagem);
+        if ($reservetion[0]) {
+            $req = $reservetion[1]['req'];
+            echo "<script>alert('Adicionado (+1) a lista de reservas');</script>";
+            echo "<script>location.href = 'reservas.php?cv=add&req=$req&cod=$cod_viagem'</script>";
+        } else {
+            $cvbd->reserve($id_cliente, $cod_viagem, $quantidade);
+            echo "<script>alert('Adicionado a lista de reservas');</script>";
+            echo "<script>javascript:history.go(-1)</script>";
+        }
     } else {
         echo "<script>alert('Faça o login para continuar');</script>";
         echo "<script>javascript:history.go(-1)</script>";
     }
 }
+if ($op == "mais") {
+    include_once "class/cvbd.php";
+    $cvbd = new Cvbd();
+    $req = $_GET['req'];
+    $cvbd->viagemPlus($req, 1);
+    echo "<script>javascript:history.go(-1)</script>";
+}
+if ($op == "menos") {
+    include_once "class/cvbd.php";
+    $cvbd = new Cvbd();
+    $req = $_GET['req'];
+    $cvbd->viagemPlus($req, -1);
+    echo "<script>javascript:history.go(-1)</script>";
+}
+
+if ($op == "add") {
+    include_once "class/cvbd.php";
+    $cvbd = new Cvbd();
+    $req = $_GET['req'];
+    $cod = $_GET['cod'];
+    $cvbd->viagemPlus($req, 1);
+    echo "<script>location.href = 'viagem.php?cod=$cod'</script>";
+}
+
 
 ?>
