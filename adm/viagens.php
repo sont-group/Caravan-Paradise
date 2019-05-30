@@ -47,46 +47,44 @@
 
       if ($req == "tabela") {
 
-        if ($tabela->check()) {       
-        ?>
+        if ($tabela->check()) {
+          ?>
 
-        <div class="container">
-          <h2>Tabela de Viagens</h2>
-          <br>
-          <div class="table-responsive">
+          <div class="container">
+            <h2>Tabela de Viagens</h2>
+            <br>
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-                <thead>
-                  <tr>
+                  <thead>
+                    <tr>
+                      <th>cod</th>
+                      <th>nome</th>
+                      <th>Origem</th>
+                      <th>Destino</th>
+                      <th>Preço</th>
+                      <th>Hotel</th>
+                      <th>Opções</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
-                    <th>nome</th>
-                    <th>Origem</th>
-                    <th>Destino</th>
-                    <th>Preço</th>
-                    <th>Hotel</th>
-                    <th>Opções</th>
-                  </tr>
-                </thead>
-                <tbody>
 
+                    <?php $tabela->tabela(); ?>
 
-                  <?php $tabela->tabela(); ?>
+                  </tbody>
+                </table>
 
-                </tbody>
-              </table>
-
+              </div>
             </div>
           </div>
-        </div>
-      
 
-      <?php }
-      else{
+
+        <?php } else {
         echo "<script>alert('Nenhuma viagem cadastrada\\nCadastre para continuar');</script>";
         echo "<script>location.href = 'viagens.php?req=cadastrar'</script>";
       }
-    
     } elseif ($req == "cadastrar") {
       include_once "class/travel.php";
       $form = new Travel();
@@ -124,6 +122,7 @@
           $xlocal = implode(', ', $local);
           $xhotels = implode(', ', $hotels);
           $imagens = "$icone * $xlocal * $xhotels";
+
 
           $sqbd->cadViagem(array($nome, $origem, $destino, $preco, $imagens, $hotel, $detalhes));
 
@@ -219,6 +218,7 @@
         $hotel = utf8_decode($_POST['hotel']);
         $preco = utf8_decode($_POST['preco']);
         $detalhes = utf8_decode($_POST['detalhes']);
+        $imagens = utf8_decode($imagens);
 
         $travel->tabUpdate($nomeOld, $nome, $origem, $destino, $hotel, $preco, $detalhes, $imagens);
       } else {
