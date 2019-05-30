@@ -213,7 +213,7 @@ img {
 }
 
 .rodape {
-  height: 126px;
+  height: 200px;
   background-color: #15bdb1;
   border-style: solid;
   border-width: 2px 0px 0px 0px;
@@ -282,6 +282,10 @@ html, body {
   height: 126px;
   clear: both;
 
+}
+#contatos{
+  position: absolute;
+  width: left;
 }
 
 /* rodape */
