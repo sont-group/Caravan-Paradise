@@ -10,8 +10,8 @@ if ($op == "reservas") {
     $cvbd = new Cvbd();
 
     include_once('class/setup.php');
-            $setup = new Setup();
-           
+    $setup = new Setup();
+
     session_start();
     $login = $_SESSION['caravanlogin'];
     $senha = $_SESSION['caravansenha'];
@@ -29,7 +29,10 @@ if ($op == "reservas") {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=100%, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Caravan Paradise</title>
+            <title>Caravan Paradise - Reservas</title>
+
+            <!-- favicon -->
+            <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
             <!-- Bootstrap core CSS -->
             <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -42,14 +45,14 @@ if ($op == "reservas") {
         </head>
 
         <body>
-            <?php  $setup->menu(); ?>
+            <?php $setup->menu(); ?>
             <br> <br>
             <div class=" container mt-4">
                 <br>
                 <h2 class="card">Pacotes de Reservas</h2>
             </div>
 
-            
+
 
             <br>
 

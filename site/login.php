@@ -17,6 +17,9 @@ if ($op == "login") {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Caravan Paradise - Login</title>
 
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
+
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- estilos -->
@@ -28,8 +31,8 @@ if ($op == "login") {
 
 
     </head>
-    <form> 
-<input type="button" value="Voltar" onClick="history.go(-1)"> 
+    <form>
+        <input type="button" value="Voltar" onClick="history.go(-1)">
     </form>
 
     <body class="bg-dark">
@@ -41,16 +44,16 @@ if ($op == "login") {
                     <form method="post" action="login.php?login=sim">
                         <div class="form-group">
                             <div class="form-label-group">
-                            <label for="inputEmail">Usuário</label>
+                                <label for="inputEmail">Usuário</label>
                                 <input name='login' id="inputEmail" class="form-control" placeholder="Login" required="required" autofocus="autofocus">
-                                
+
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-label-group ">
-                            <label for="senha">Senha</label>
+                                <label for="senha">Senha</label>
                                 <input name='senha' type="password" id="senha" class="form-control" placeholder="Senha" required="required">
-                                
+
                             </div>
                         </div>
 
@@ -87,7 +90,7 @@ if ($op == "login") {
 if ($op == 'sim') {
     include_once "class/cvbd.php";
     $cvbd = new Cvbd();
-   
+
 
     session_start();
     $login = $_POST['login'];

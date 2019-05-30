@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Caravan Paradise</title>
+    <title>Caravan Paradise - Sobre</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">

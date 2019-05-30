@@ -15,7 +15,10 @@ if (isset($_GET['cv'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Caravan Paradise</title>
+    <title>Caravan Paradise - Contato</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -64,9 +67,9 @@ if (isset($_GET['cv'])) {
         border-radius: 2px;
         box-sizing: border-box;
         resize: vertical;
-       /* margin-top: 6px;*/
+        /* margin-top: 6px;*/
         margin-bottom: 15px;
-    
+
       }
 
       input[type=submit] {
@@ -98,7 +101,7 @@ if (isset($_GET['cv'])) {
 
     ?>
 
-    
+
 
     <div class="hero-image">
       <div class="hero-text">
@@ -112,7 +115,7 @@ if (isset($_GET['cv'])) {
             <input type="text" id="email" name="email" placeholder="john@example.com">
 
             <label for="mensagem">Em que podemos ajudar?</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Digite sua dúvida..." rows="5" ></textarea>
+            <textarea id="mensagem" name="mensagem" placeholder="Digite sua dúvida..." rows="5"></textarea>
             <input type="submit" value="Enviar">
             <br><br>
           </form>

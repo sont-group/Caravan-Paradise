@@ -2,10 +2,13 @@
 <html lang="pt-br">
 
 <head>
-  <<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=100%, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Caravan Paradise</title>
+  <title>Caravan Paradise - Pagamento</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
   <!-- Bootstrap core CSS -->
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -16,20 +19,21 @@
   <style>
     /*Pagamento*/
     .checkrow {
-    display: -ms-flexbox;
-    /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap;
-    /* IE10 */
-    flex-wrap: wrap;
-    margin: 0 -16px;
-  }
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap;
+      /* IE10 */
+      flex-wrap: wrap;
+      margin: 0 -16px;
+    }
+
     .check {
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
+      background-color: #f2f2f2;
+      padding: 5px 20px 15px 20px;
+      border: 1px solid lightgrey;
+      border-radius: 3px;
+    }
 
     .col-25 {
       -ms-flex: 20%;
@@ -82,16 +86,17 @@
     }
 
     .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
     .btn:hover {
       background-color: #45a049;
     }
@@ -112,8 +117,9 @@
     /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
     @media (max-width: 800px) {
       .checkrow {
-      flex-direction: column-reverse;
-    }
+        flex-direction: column-reverse;
+      }
+
       .col-25 {
         margin-bottom: 20px;
       }
@@ -128,15 +134,15 @@
   $setup->menu();
   ?>
   <br><br><br><br>
-<div class="container">
-  <div class="row checkrow">
-  <div class="col-75">
-    <div class="container check">
-      <form action="/action_page.php">
+  <div class="container">
+    <div class="row checkrow">
+      <div class="col-75">
+        <div class="container check">
+          <form action="/action_page.php">
 
-        <div class="row checkrow">
-          <div class="col-50">
-          <h3>Dados pessoais</h3>
+            <div class="row checkrow">
+              <div class="col-50">
+                <h3>Dados pessoais</h3>
                 <label for="fname"><i class="fa fa-user"></i> Nome Completo </label>
                 <input type="text" id="fname" name="firstname" placeholder="Jhonatan Luiz">
                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
@@ -148,18 +154,18 @@
 
                 <div class="row checkrow">
                   <div class="col-50">
-                    
+
                   </div>
                   <div class="col-50">
-                    
+
                   </div>
                 </div>
               </div>
-          <div class="col-50">
-          <h3>Forma de pagamento</h3>
+              <div class="col-50">
+                <h3>Forma de pagamento</h3>
                 <label for="fname">Cartão de Crédito</label>
                 <div class="icon-container">
-                  
+
                   <i class="fab fa-cc-visa" style="color:navy;"></i>
                   <i class="fab fa-cc-amex" style="color:blue;"></i>
                   <i class="fab fa-cc-mastercard" style="color:red;"></i>
@@ -185,12 +191,12 @@
               </div>
 
             </div>
-        <label>
-        <input type="submit" value="Finalizar compra" class="btn">
+            <label>
+              <input type="submit" value="Finalizar compra" class="btn">
           </form>
         </div>
-  </div>
-  <div class="col-25">
+      </div>
+      <div class="col-25">
         <div class="container check">
           <h4>Reserva(s)
             <span class="price" style="color:black">
@@ -208,7 +214,7 @@
       </div>
     </div>
   </div>
-    <br>
+  <br>
 
   <div class="center">
 
@@ -218,5 +224,9 @@
 
   </div>
 </body>
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.js"></script>
+
 
 </html>

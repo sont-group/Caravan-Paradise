@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=100%, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Caravan Paradise</title>
+  <title>Caravan Paradise - Home</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
   <!-- Bootstrap core CSS -->
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -13,6 +16,7 @@
   <link rel="stylesheet" href="css/estilos.css">
   <!-- Custom fonts-->
   <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
 </head>
 
 <style>
@@ -33,7 +37,8 @@
 
   <div class="container_img">
     <img src="images/porto.jpg" alt="Snow" style="width:100%;">
-    <form action="busca.php" method="post">
+
+    <form action="busca.php" method="get">
       <div class=" container centered ">
         <h3>Caravan Paradise</h3>
         <input class="busking" name="busca" type="text" class="mb-2" placeholder="Faça sua Busca...">

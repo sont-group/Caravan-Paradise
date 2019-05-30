@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Caravan Paradise</title>
+    <title>Caravan Paradise - Busca</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -24,7 +27,7 @@
     include_once("class/cvbd.php");
     $cvbd = new Cvbd();
 
-    $busca = $_POST['busca'];
+    $busca = $_GET['busca'];
 
     $dados = $cvbd->search($busca);
 
@@ -56,7 +59,7 @@
                 foreach ($dados as $value) {
                     $setup->cards(array($value['cod']));
                 }
-            }else{
+            } else {
                 echo "Nenhum resultado encontrado para: <br>";
                 echo "<b style='color:red;'>$busca</b>";
             }

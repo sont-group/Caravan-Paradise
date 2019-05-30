@@ -14,7 +14,10 @@ if ($op == "cadastro") {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=100%, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Caravan Paradise - Login</title>
+        <title>Caravan Paradise - Cadastro</title>
+
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -58,7 +61,7 @@ if ($op == "cadastro") {
                         <div class="form-group">
                             <div class="form-label-group ">
                                 <label for="telefone">Telefone</label>
-                                <input name='telefone' type="tel" id="telefone" class="form-control" placeholder="Telefone" required="required" onkeypress="mascara(this, '## #########')" pattern="[0-9 -]+" maxlength="12" minlength="11" >
+                                <input name='telefone' type="tel" id="telefone" class="form-control" placeholder="Telefone" required="required" onkeypress="mascara(this, '## #########')" pattern="[0-9 -]+" maxlength="12" minlength="11">
 
                             </div>
                             <div class="form-label-group ">
@@ -90,7 +93,7 @@ if ($op == "cadastro") {
         </div>
         <br><br><br>
         <!-- Bootstrap core JavaScript -->
-        
+
         <script src="bootstrap/js/bootstrap.bundle.js"></script>
 
     </body>
@@ -135,7 +138,10 @@ if ($op == "configurar") {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=100%, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Caravan Paradise - Login</title>
+        <title>Caravan Paradise - Configurar</title>
+
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -157,7 +163,7 @@ if ($op == "configurar") {
 
         <div class="container col-md-6">
             <div class="card card-login mx-auto mt-5">
-                <div class="card-header">Cadastro</div>
+                <div class="card-header">Configurar Conta</div>
                 <div class="card-body">
 
                     <form method="post" action="user.php?cv=atualizar">
