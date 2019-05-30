@@ -80,9 +80,7 @@
 
         </div>
     </div>
-    <div id="rodape">
-            <?php $setup->footer(); ?>    
-    </div>
+    <div id="rodape"><?php $setup->footer(); ?></div>
 
 
     <!-- Bootstrap core JavaScript -->

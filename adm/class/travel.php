@@ -237,7 +237,7 @@ public function tabela()
 
     $sql = "select * from viagens";
    foreach ($conn->query($sql) as $row) {
-
+        $cod = $row['cod'];
         $nome = $row['nome'];
         $origem = $row['origem'];
         $destino = $row['destino'];
@@ -252,7 +252,7 @@ public function tabela()
         $excluir = "<a class='tabdel' title='Excluir' href='viagens.php?req=tabela_del&nome=$nome'><i class='fas fa-minus-circle'></i></a>";
         $novo = "<a class='text-success' title='Novo' href='viagens.php?req=cadastrar'><i class='fas fa-plus-circle'></i></a>";        
         $link = "$info $alterar $excluir $novo";
-        echo utf8_encode("<tr><td>$nome</td><td>$origem</td><td>$destino</td><td>R$$preco</td><td>$hotel</td><td style='text-align:center;'>$link</td></tr>");       
+        echo utf8_encode("<tr><td>$cod</td><td>$nome</td><td>$origem</td><td>$destino</td><td>R$$preco</td><td>$hotel</td><td style='text-align:center;'>$link</td></tr>");       
     }
        
 }
