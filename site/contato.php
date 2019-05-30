@@ -36,7 +36,7 @@ if (isset($_GET['cv'])) {
       }
 
       .hero-image {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("images/porto.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("images/contato.jpg");
         height: 110%;
         background-position: center;
         background-repeat: no-repeat;
