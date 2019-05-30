@@ -64,6 +64,7 @@ class Cvbd
                 $nome = $row['nome'];
                 $nome =  explode(" ", ucfirst(strtolower($nome)));
                 $check = array(true, $nome[0], $id);
+                
                 break;
             }
         }
@@ -79,7 +80,7 @@ class Cvbd
             $login = $_SESSION['caravanlogin'];
             $senha = $_SESSION['caravansenha'];
             $check = $this->loginCheck($login, $senha);
-            if ($check[0]) {
+            if ($check[0]) {                
                 return array(true, $check[1], $check[2]);
             } else {
                 session_destroy();
