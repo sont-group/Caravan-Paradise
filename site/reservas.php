@@ -59,7 +59,7 @@ if ($op == "reservas") {
                                         <tr>
                                             <th>Nome</th>
                                             <th>Valor</th>
-                                            <th>Qnt</th>
+                                            <th>Quantidade</th>
                                             <th>Subtotal</th>
                                         </tr>
                                     </thead>
