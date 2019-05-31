@@ -38,7 +38,7 @@
 
     <form action="busca.php" method="get">
       <div class=" container centered ">
-        <h3>Caravan Paradise</h3>
+        <h3 class="txtbusking">Caravan Paradise</h3>
         <input class="busking" name="busca" type="text" class="mb-2" placeholder="Faça sua Busca...">
 
         <button class="busking_btn btn "><i style="color:#FFF;" class="fas fa-search"></i></button>
