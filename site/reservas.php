@@ -106,7 +106,7 @@ if ($op == "reservas") {
                             <div class="card-body card">
                                 <h2 class="card-title">Valor das reservas</h2>
                                 <p class="card-text">
-                                    <div class="text-center"><b>Total R$<?= number_format($total, 2, ',', '.') ?> </div>
+                                    <div class="text-center"><b>Total R$<?= number_format($total, 2, ',', '.') ?></b> </div>
                                     <br>
                                     <div class="text-center"><a class="btn btn-success" href="pagamento.php"> Comprar </a></div>
                                     

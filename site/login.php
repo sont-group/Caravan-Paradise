@@ -74,7 +74,7 @@ if ($op == "login") {
                             </form>
                             <div class="text-center">
                                 <a class="d-block small mt-3" href="user.php">Registar Conta</a>
-                                <a class="d-block small" href="#">Esqueceu a Senha?</a>
+                                <!-- <a class="d-block small" href="#">Esqueceu a Senha?</a> -->
                             </div>
                         </div>
                     </div>

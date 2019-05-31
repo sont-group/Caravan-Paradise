@@ -45,7 +45,7 @@ if ($op == "cadastro") {
                     <form method="post" action="user.php?cv=cadastrar">
                         <div class="form-group ">
                             <div class="form-label-group">
-                                <label for="nome">Nome</label>
+                                <label for="nome">Nome Completo</label>
                                 <input name='nome' id="nome" class="form-control" placeholder="Nome" required="required" autofocus="autofocus">
 
                             </div>
@@ -171,7 +171,7 @@ if ($op == "configurar") {
                     <form method="post" action="user.php?cv=atualizar">
                         <div class="form-group ">
                             <div class="form-label-group">
-                                <label for="nome">Nome</label>
+                                <label for="nome">Nome Completo</label>
                                 <input value="<?= $dados['nome'] ?>" name='nome' id="nome" class="form-control" placeholder="Nome" required="required" autofocus="autofocus">
 
                             </div>
