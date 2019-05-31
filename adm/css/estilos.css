@@ -108,10 +108,13 @@ h4 {
 }
 
 /* Estilos da Tabela viagens { */
+
+   .tabitem{
+    margin-left: 1px;
+    margin-right: 1px;
+   }
     .tabdel {
         color: #ff0000;
-        margin-left: 2px;
-        margin-right: 2px;
     }
     
     .tabdel:hover {
@@ -120,15 +123,11 @@ h4 {
 
     .tabinfo {
         color: #282828;
-        margin-left: 2px;
-        margin-right: 2px;
     }
 
     .tabinfo:hover {
         color: #000000;
     }
     .tabalter{
-        margin-left: 2px;
-        margin-right: 2px;
     }
 /* Estilos da Tabela viagens } */
