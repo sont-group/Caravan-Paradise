@@ -32,54 +32,57 @@ if ($op == "login") {
 
     </head>
     <style>
-        .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("images/contato.jpg");
-            height: 90%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
+        html{
+            height: 100%;
+        }   
     </style>
 
-    <body class="hero-image">
+    <body class="hero-img">
 
-        <div class="container col-5">
-            <div class="card card-login mx-auto mt-5">
-                <div class="card-header">Login</div>
-                <div class="card-body">
-                    <form method="post" action="login.php?login=sim">
-                        <div class="form-group">
-                            <div class="form-label-group">
-                                <label for="inputEmail">Usuário</label>
-                                <input name='login' id="inputEmail" class="form-control" placeholder="Login" required="required" autofocus="autofocus">
+        <div class="container">
+            <div class="col-12 row">
+                <div class="col-3"></div>
+                <div class="col-md-6">
+                    <div class="card card-login mx-auto mt-5">
+                        <div class="card-header">Login</div>
+                        <div class="card-body">
+                            <form method="post" action="login.php?login=sim">
+                                <div class="form-group">
+                                    <div class="form-label-group">
+                                        <label for="inputEmail">Usuário</label>
+                                        <input name='login' id="inputEmail" class="form-control" placeholder="Login" required="required" autofocus="autofocus">
 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label-group ">
+                                        <label for="senha">Senha</label>
+                                        <input name='senha' type="password" id="senha" class="form-control" placeholder="Senha" required="required">
+
+                                    </div>
+                                </div>
+
+
+                                <button class="btn btn-primary btn-block mt-4" type="submit">Confirmar</button>
+
+                                <br>
+                                <a href="index.php" class="btn btn-success btn-block mt-2">
+                                    Voltar
+                                </a>
+
+
+                            </form>
+                            <div class="text-center">
+                                <a class="d-block small mt-3" href="user.php">Registar Conta</a>
+                                <a class="d-block small" href="#">Esqueceu a Senha?</a>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-label-group ">
-                                <label for="senha">Senha</label>
-                                <input name='senha' type="password" id="senha" class="form-control" placeholder="Senha" required="required">
-
-                            </div>
-                        </div>
-
-
-                        <button class="btn btn-primary btn-block mt-4" type="submit">Confirmar</button>
-
-                        <br>
-                        <a href="index.php" class="btn btn-success btn-block mt-2">
-                            Voltar
-                        </a>
-
-
-                    </form>
-                    <div class="text-center">
-                        <a class="d-block small mt-3" href="user.php">Registar Conta</a>
-                        <a class="d-block small" href="#">Esqueceu a Senha?</a>
                     </div>
                 </div>
+                <div class="col-3"></div>
             </div>
+
+
         </div>
 
 
