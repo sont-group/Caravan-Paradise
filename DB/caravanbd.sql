@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Maio-2019 às 12:06
+-- Generation Time: 31-Maio-2019 às 19:24
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.4
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `caravanbd`
 --
+CREATE DATABASE IF NOT EXISTS `caravanbd` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `caravanbd`;
 
 -- --------------------------------------------------------
 
@@ -42,21 +44,12 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `cpf`, `nome`, `email`, `telefone`, `senha`) VALUES
-(1, '323.434.345-54', 'Zake Coster', 'zac@gmail.com', '12)98182-3233', '12345678'),
-(3, '482.531.303-74', 'brayan', 'brayan@gmail.com', '(12)98233-3421', '999999999'),
-(4, '543.534.656-32', 'Mateus Leonardo', 'Mateus@gmail.com', '(12)99192-9394', '88888888'),
-(5, '00000000000', 'admin', 'admin', '12 991872346', 'admin'),
-(7, '47462846284', 'jhonatan luiz chagas', 'jhonatan@gmail.com', '3123', '5555'),
-(8, '2342', 'jho', 'jhonatann@gmail.com', '323', '88888888'),
-(9, '12213213213213', 'pinguelano', 'pinguelano@gmail.com', '12981827621', '123'),
-(10, '828283848588', 'Ligia', 'ligia@gmail.com', '12988888888', '123'),
-(11, '', 'jhonatan luiz chagas', '', '284762736', '123131'),
-(12, '12313121123', 'jho', 'jho@gmail.com', '1231231', 'jho'),
-(13, '4583821931', 'marcos', 'marcos@gmail.com', '123123', '123'),
-(14, '12435243523', 'joao victor azevedo', 'joao@gmail.com', '1231445676', '12345'),
-(15, '76427836487264', '42424234', 'admin2342234@131.com', '27347284782', 'admin'),
-(16, '458.509.308-76', 'jhonatan luiz chagas', 'jonatapqt01@gmail.com', '12 981827621', '4444'),
-(17, '827.463.260-51', 'Gabriel Cristie Custodio Narciso', 'bielcristie@gmail.com', '12 98199999', 'petterquill');
+(1, '841.679.440-57', 'Eduardo STR', 'edu@gmail.com', '35 991435678', '123456'),
+(2, '482.531.308-64', 'brayinha', 'bm@gmail.com', '12 981500718', '@#!banana'),
+(3, '270.537.520-11', 'mateus', 'lmateussilval@hotmail.com', '12 996110785', 'm12345'),
+(4, '828.964.510-48', 'Jason Mamoa', 'dln-000@protonmail.com', '12 981169435', 'abacaxi'),
+(5, '441.460.738-80', 'Luisa ', 'luisa.couto@fatec.sp.gov.br', '12 888999555', 'leocalado'),
+(6, '458.509.308-76', 'jhonatan luiz chagas', 'jonatapqt01@gmail.com', '12 981827621', '1234');
 
 -- --------------------------------------------------------
 
@@ -76,15 +69,7 @@ CREATE TABLE `contatos` (
 --
 
 INSERT INTO `contatos` (`req`, `nome`, `email`, `mensagem`) VALUES
-(1, 'jhonatan luiz chagas', 'jonatapqt01@gmail.com', 'Não Haver'),
-(2, 'Guilherme Dnizetti', 'guilhermetecnologias@gmail.com', 'Olá, posso trabalhar para vocês?'),
-(3, 'jhonatan luiz chagas', 'jonatapqt01@gmail.com', 'adfsdfas'),
-(4, '', '', 'thbth'),
-(5, '', '', ''),
-(6, 'jhonatan luiz chagas', 'jonatapqt01@gmail.com', 'xzcvxzcv'),
-(7, 'bdbxcb', 'jonatapqt01@gmail.com', 'xcbbcv'),
-(8, 'jsfhios', 'shfsf@aodop.sod', 'ashdoaishd'),
-(9, 'Ligia', 'ligia.brezolin@gmail.com', 'hdjhskjdhsdhjs');
+(1, 'Luisa Ribeiro Couto', 'luisa.couto@fatec.sp.gov.br', 'Por favor vamos terminar esse projeto, to cansada :c');
 
 -- --------------------------------------------------------
 
@@ -104,7 +89,11 @@ CREATE TABLE `pacotes` (
 --
 
 INSERT INTO `pacotes` (`req`, `id_cliente`, `cod_viagem`, `quantidade`) VALUES
-(49, 5, 8, 3);
+(1, 1, 7, 1),
+(2, 2, 11, 2),
+(3, 4, 5, 1),
+(4, 5, 11, 1),
+(5, 6, 6, 2);
 
 -- --------------------------------------------------------
 
@@ -113,20 +102,19 @@ INSERT INTO `pacotes` (`req`, `id_cliente`, `cod_viagem`, `quantidade`) VALUES
 --
 
 CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `login` varchar(100) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `sobrenome` varchar(100) NOT NULL,
   `cpf` varchar(14) NOT NULL,
-  `senha` varchar(100) NOT NULL,
-  `tipo` varchar(30) NOT NULL
+  `senha` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`login`, `nome`, `sobrenome`, `cpf`, `senha`, `tipo`) VALUES
-('admin', 'admin', 'admin', 'xxx.xxx.xxx-xx', 'admin', 'admin');
+INSERT INTO `users` (`id`, `login`, `nome`, `cpf`, `senha`) VALUES
+(1, 'admin', 'admin', '000.000.000-00', 'admin');
 
 -- --------------------------------------------------------
 
@@ -192,7 +180,7 @@ ALTER TABLE `pacotes`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`cpf`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `viagens`
@@ -208,19 +196,25 @@ ALTER TABLE `viagens`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `contatos`
 --
 ALTER TABLE `contatos`
-  MODIFY `req` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `req` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pacotes`
 --
 ALTER TABLE `pacotes`
-  MODIFY `req` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `req` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
