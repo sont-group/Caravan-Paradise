@@ -104,11 +104,11 @@ if ($op == "reservas") {
 
                         <div class="card ">
                             <div class="card-body card">
-                                <h2 class="card-title">Confirmar</h2>
+                                <h2 class="card-title">Valor das reservas</h2>
                                 <p class="card-text">
                                     <div><b>Total <?= number_format($total, 2, ',', '.') ?> </div>
                                     <br>
-                                    <a class="btn btn-primary" href="pagamento.php"> pagar </a>
+                                    <a class="btn btn-success" href="pagamento.php"> Comprar </a>
 
 
                                 </p>
