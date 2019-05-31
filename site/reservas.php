@@ -86,7 +86,7 @@ if ($op == "reservas") {
                                                     <td><?= $nome ?></td>
                                                     <td>R$<?= $valor ?></td>
                                                     <td ><a href='reservas.php?cv=menos&req=<?= $req ?>'><i style='color: blue;' class='fas fa-minus-circle'></i></a><b> <?= $quant ?> </b><a href='reservas.php?cv=mais&req=<?= $req ?>'><i style='color: green;' class='fas fa-plus-circle'></i></a></td>
-                                                    <td>R$ <?= $subtotal ?></td>
+                                                    <td>R$<?= $subtotal ?></td>
                                                 </tr>
                                             <?php
                                         }
