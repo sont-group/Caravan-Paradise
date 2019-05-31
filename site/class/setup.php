@@ -32,7 +32,7 @@ class Setup
                     </li>
                     <?php
                     if ($status) {
-                        echo "<li class='nav-item active'><a class='nav-link active' href='reservas.php'>Reservas</a></li>";
+                        echo "<li class='nav-item active'><a class='nav-link active' href='reservas.php?cv=check'>Reservas</a></li>";
                     }
                     ?>
 

@@ -221,6 +221,7 @@ class Cvbd
             $dados[$i++] = array('req' => $req, 'id_cliente' => $id_cliente, 'cod_viagem' => $cod_viagem, 'quantidade' => $quantidade);
         }
         if ($i == 0) {
+            
             return false;
         } else {
             return $dados;

@@ -12,16 +12,6 @@ if ($op == "reservas") {
     include_once('class/setup.php');
     $setup = new Setup();
 
-    session_start();
-    $login = $_SESSION['caravanlogin'];
-    $senha = $_SESSION['caravansenha'];
-    $dados = $cvbd->userSelect($login, $senha);
-
-
-    $reservas = $cvbd->reservations($dados['id']);
-    if ($reservas) {
-
-
         ?>
         <!DOCTYPE html>
         <html lang="pt-br">
@@ -46,7 +36,9 @@ if ($op == "reservas") {
         </head>
 
         <body>
-            <?php $setup->menu(); ?>
+            <?php $ids = $setup->menu();
+            $reservas = $cvbd->reservations($ids);
+            ?>
             <br> <br>
             <div class=" container mt-4">
                 <br>
@@ -142,11 +134,50 @@ if ($op == "reservas") {
         </html>
 
     <?php
-} else {
-    echo "<script>alert('Nenhum Pacote Adquirido');</script>";
-    echo "<script>javascript:history.go(-1)</script>";
+
 }
+if ($op == "check") {
+
+    include_once "class/cvbd.php";
+    $cvbd = new Cvbd();
+
+    session_start();
+    $login = $_SESSION['caravanlogin'];
+    $senha = $_SESSION['caravansenha'];
+    $dados = $cvbd->userSelect($login, $senha);
+
+    $reservas = $cvbd->reservations($dados['id']);
+
+    if ($reservas[0]) {
+        echo "<script>location.href = 'reservas.php'</script>";
+    }else{
+        echo "<script>alert('Nenhum Pacote Adquirido');</script>";
+        echo "<script>javascript:history.go(-1)</script>";
+    }
 }
+
+if ($op == "checks") {
+
+    include_once "class/cvbd.php";
+    $cvbd = new Cvbd();
+
+    session_start();
+    $login = $_SESSION['caravanlogin'];
+    $senha = $_SESSION['caravansenha'];
+    $dados = $cvbd->userSelect($login, $senha);
+
+    $reservas = $cvbd->reservations($dados['id']);
+
+    if ($reservas[0]) {
+        echo "<script>location.href = 'reservas.php'</script>";
+    }else{
+        echo "<script>alert('Nenhum Pacote Adquirido');</script>";
+        echo "<script>location.href = 'index.php'</script>";
+    }
+}
+
+
+
 if ($op == "registrar") {
     include_once "class/cvbd.php";
     $cvbd = new Cvbd();
@@ -187,7 +218,7 @@ if ($op == "menos") {
     $cvbd = new Cvbd();
     $req = $_GET['req'];
     $cvbd->viagemPlus($req, -1);
-    echo "<script>javascript:history.go(-1)</script>";
+    echo "<script>location.href = 'reservas.php?cv=checks'</script>";
 }
 
 if ($op == "add") {
