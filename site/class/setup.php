@@ -231,19 +231,22 @@ public function footer()
         <br>
         <div class="col-12">
             <div class="row">
-                <div class="col-8">
+                <div class="col-11">
                     &copy; 2019 - Caravan Paradise. Todos os direitos reservados.
                 </div>
-                <div class="col-4">
+                <div class="col-5">
                     <h5 class="widget_title">Contato</h5>
                     <div class="contacts_wrap">
                         <div class="contacts_info">
                             <div class="contacts_left"><span class="contacts_address">Rua Cap. Neco, 364 12701350 Cruzeiro (São Paulo)</span></div>
-                            <div class="contacts_right"><span class="contacts_email"><a href="mailto:http://localhost/Caravan-Paradise/site/index.php">eli@caravanparadise.com.br</a></span><span class="contacts_phone">(12) 3144-5855</span></div>
+                            <div class="contacts_right">
+                                <span class="contacts_email">
+                                    <a href="mailto:http://localhost/Caravan-Paradise/site/index.php">eli@caravanparadise.com.br</a>
+                                </span><span class="contacts_phone">(12) 3144-5855</span></div>
                         </div>
-                    </div><!-- /.contacts_wrap -->
+                    </div>
                 </div>
-                <div class="col-2">
+                <div id = "icones-rodape">
                     <a class="facebook_directin" href="#">
                         <img width="40px" class="img-fluid" src="images/facebook_icon.png">
                     </a>
