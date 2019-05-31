@@ -228,14 +228,14 @@ img {
 /* busca banner */
 .txtbusking{
   font-size: 36px;
-  margin-left: 4px;
+  margin-left: 3px;
 }
 
 .busking {
   font-size: 18px;
   height: 45px;
   width: 275px;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.18);
   border-style: solid;
   border-color: #FFF;
   border-width: 3px;
@@ -246,7 +246,7 @@ img {
 }
 
 .busking:hover {
-  transition: 200ms;
+  transition: 300ms;
   background: rgba(0, 0, 0, 0.3);
 }
 
