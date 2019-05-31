@@ -17,6 +17,12 @@
     <!-- Custom fonts-->
     <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 </head>
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+</style>
 
 <body>
 

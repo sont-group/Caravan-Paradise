@@ -34,8 +34,17 @@ if ($op == "cadastro") {
 
 
     </head>
-
-    <body class="bg-dark">
+    <style>
+    .hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("images/porto.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+    </style>
+    <body class="hero-image">
 
         <div class="container col-md-6">
             <div class="card card-login mx-auto mt-5">

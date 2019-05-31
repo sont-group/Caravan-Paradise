@@ -31,11 +31,18 @@ if ($op == "login") {
 
 
     </head>
-    <form>
-        <input type="button" value="Voltar" onClick="history.go(-1)">
-    </form>
+    <style>
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("images/contato.jpg");
+            height: 90%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+    </style>
 
-    <body class="bg-dark">
+    <body class="hero-image">
 
         <div class="container col-5">
             <div class="card card-login mx-auto mt-5">
