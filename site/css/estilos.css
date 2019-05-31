@@ -245,6 +245,10 @@ img {
   background: rgba(0, 0, 0, 0.3);
 }
 
+.busking::placeholder {
+  color: #FFF;
+}
+
 .busking_btn {
   margin-bottom: 5px;
   border-style: none;

@@ -154,7 +154,7 @@ public function tabPacotes()
             $preco = $row['preco'];
         }
         $total = $quantidade * $preco;
-       
+       $total = number_format($total, 2, ',', '.');
         echo utf8_encode("<tr><td>$req</td><td>$nome</td><td>$viagem</td><td>$quantidade</td><td>R$$total</td></tr>");
     }
 }

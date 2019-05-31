@@ -20,9 +20,7 @@
 </head>
 
 <style>
-  ::placeholder {
-    color: #FFF;
-  }
+
 </style>
 
 <body>
