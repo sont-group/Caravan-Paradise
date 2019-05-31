@@ -49,7 +49,7 @@ if ($op == "login") {
                             <form method="post" action="login.php?login=sim">
                                 <div class="form-group">
                                     <div class="form-label-group">
-                                        <label for="inputEmail">Usuário</label>
+                                        <label for="inputEmail">Email</label>
                                         <input name='login' id="inputEmail" class="form-control" placeholder="Login" required="required" autofocus="autofocus">
 
                                     </div>
