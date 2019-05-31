@@ -247,11 +247,11 @@ public function tabela()
         $detalhes = $row['detalhes'];
         $preco = number_format($preco, 2, ',', '.');
         // $link = "<a href='viagens.php?req=visualizar&nome=$nome'>Mais</a>";
-        $info = "<a class='tabinfo' title='Sobre' href='viagens.php?req=visualizar&nome=$nome'><i class='fas fa-info-circle'></i></a>";
-        $alterar = "<a class='tabalter' title='Editar' href='viagens.php?req=tabela_edit&nome=$nome'><i class='fas fa-edit'></i></a>";
-        $excluir = "<a class='tabdel' title='Excluir' href='viagens.php?req=tabela_del&nome=$nome'><i class='fas fa-minus-circle'></i></a>";
-        $novo = "<a class='text-success' title='Novo' href='viagens.php?req=cadastrar'><i class='fas fa-plus-circle'></i></a>";        
-        $link = "$info $alterar $excluir $novo";
+        $info = "<a class='tabitem tabinfo' title='Sobre' href='viagens.php?req=visualizar&nome=$nome'><i class='fas fa-info-circle'></i></a>";
+        $alterar = "<a class='tabitem tabalter' title='Editar' href='viagens.php?req=tabela_edit&nome=$nome'><i class='fas fa-pen-square'></i></a>";
+        $excluir = "<a class='tabitem tabdel' title='Excluir' href='viagens.php?req=tabela_del&nome=$nome'><i class='fas fa-minus-circle'></i></a>";
+        $novo = "<a class='tabitem text-success' title='Novo' href='viagens.php?req=cadastrar'><i class='fas fa-plus-circle'></i></a>";        
+        $link = "$info$alterar$excluir$novo";
         echo utf8_encode("<tr><td>$cod</td><td>$nome</td><td>$origem</td><td>$destino</td><td>R$$preco</td><td>$hotel</td><td style='text-align:center;'>$link</td></tr>");       
     }
        
