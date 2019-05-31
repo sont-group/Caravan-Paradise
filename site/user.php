@@ -35,7 +35,7 @@ if ($op == "cadastro") {
 
     </head>
 
-    <body class="bg-dark">
+    <body class="hero-img">
 
         <div class="container col-md-6">
             <div class="card card-login mx-auto mt-5">
@@ -159,7 +159,9 @@ if ($op == "configurar") {
 
     </head>
 
-    <body class="bg-dark">
+
+  
+    <body class="hero-img">
 
         <div class="container col-md-6">
             <div class="card card-login mx-auto mt-5">
