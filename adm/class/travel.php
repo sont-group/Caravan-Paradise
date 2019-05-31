@@ -290,7 +290,7 @@ public function visualizar($nome)
     $icone = explode(' * ', $imagens)[0];
     $local = explode(', ', explode(' * ', $imagens)[1]);
     $hotels = explode(', ', explode(' * ', $imagens)[2]);
-
+    $preco = number_format($preco, 2, ',', '.');
     ?>
 
     <!-- Page Content -->
@@ -319,7 +319,7 @@ public function visualizar($nome)
                     <br>
                     <b>Hotel:</b> <?= $hotel ?>
                     <br>
-                    <b>Preço:</b> <?= $preco ?>
+                    <b>Preço:</b> R$<?= $preco ?>
                 </p>
             </div>
 
