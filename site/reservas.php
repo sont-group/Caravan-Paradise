@@ -56,7 +56,7 @@ if ($op == "reservas") {
                             <div class="table-responsive">
                                 <table class="table table-bordered">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th>Nome</th>
                                             <th>Valor</th>
                                             <th>Quantidade</th>
@@ -82,10 +82,10 @@ if ($op == "reservas") {
                                             if ($quant > 0) {
 
                                                 ?>
-                                                <tr>
+                                                <tr class="text-center">
                                                     <td><?= $nome ?></td>
                                                     <td>R$ <?= $valor ?></td>
-                                                    <td><a href='reservas.php?cv=menos&req=<?= $req ?>'><i style='color: blue;' class='fas fa-minus-circle'></i></a><b> <?= $quant ?> </b><a href='reservas.php?cv=mais&req=<?= $req ?>'><i style='color: green;' class='fas fa-plus-circle'></i></a></td>
+                                                    <td ><a href='reservas.php?cv=menos&req=<?= $req ?>'><i style='color: blue;' class='fas fa-minus-circle'></i></a><b> <?= $quant ?> </b><a href='reservas.php?cv=mais&req=<?= $req ?>'><i style='color: green;' class='fas fa-plus-circle'></i></a></td>
                                                     <td>R$ <?= $subtotal ?></td>
                                                 </tr>
                                             <?php
