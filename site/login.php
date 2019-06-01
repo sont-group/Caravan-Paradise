@@ -34,11 +34,12 @@ if ($op == "login") {
     <style>
         html{
             height: 100%;
-        }   
+        }
+      
     </style>
 
     <body class="hero-img">
-
+       <i onclick="javascript:history.go(-1)" class="fas fa-arrow-left btn_return"></i>
         <div class="container">
             <div class="col-12 row">
                 <div class="col-3"></div>
@@ -108,7 +109,7 @@ if ($op == 'sim') {
     if ($cvbd->loginCheck($login, $senha)[0]) {
         $_SESSION['caravanlogin'] = $login;
         $_SESSION['caravansenha'] = $senha;
-        echo "<script>location.href = 'index.php'</script>";
+        echo "<script>javascript:history.go(-2)</script>";
     } else {
         unset($_SESSION['caravanlogin']);
         unset($_SESSION['caravansenha']);
@@ -119,6 +120,6 @@ if ($op == 'sim') {
 if ($op == 'nao') {
     session_start();
     session_destroy();
-    echo "<script>location.href = 'login.php'</script>";
+    echo "<script>location.href = 'index.php'</script>";
 }
 ?>

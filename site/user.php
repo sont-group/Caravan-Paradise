@@ -36,14 +36,13 @@ if ($op == "cadastro") {
     </head>
 
     <body class="hero-img">
-
+    <i style="margin-top:-38px;" onclick="javascript:history.go(-1)" class="fas fa-arrow-left btn_return"></i>
         <div class="container col-md-6">
             <div class="card card-login mx-auto mt-5">
                 <div class="card-header">Cadastro</div>
                 <div class="card-body">
-
                     <form method="post" action="user.php?cv=cadastrar">
-                        <div class="form-group ">
+                        <div class="form-group">
                             <div class="form-label-group">
                                 <label for="nome">Nome Completo</label>
                                 <input name='nome' id="nome" class="form-control" placeholder="Nome" required="required" autofocus="autofocus">
@@ -160,9 +159,9 @@ if ($op == "configurar") {
     </head>
 
 
-  
-    <body class="hero-img">
 
+    <body class="hero-img">
+    <i style="margin-top:-38px;" onclick="javascript:history.go(-1)" class="fas fa-arrow-left btn_return"></i>
         <div class="container col-md-6">
             <div class="card card-login mx-auto mt-5">
                 <div class="card-header">Configurar Conta</div>
@@ -209,11 +208,8 @@ if ($op == "configurar") {
 
 
                         <button class="btn btn-primary btn-block mt-4" type="submit">Confirmar</button>
-
                         <br>
-                        <a href="index.php" class="btn btn-success btn-block mt-2">
-                            Voltar
-                        </a>
+                        <div onclick="javascript:history.go(-1)" class="btn btn-success btn-block mt-2"> Voltar </div>
                     </form>
                     <br>
                 </div>

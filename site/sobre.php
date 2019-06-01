@@ -36,7 +36,7 @@
                     Caravan Paradise é uma agência de Viagens que pode levá- los ao lugar onde sempre sonharam em ir, proporcionando uma experiência incrível e única.<br>
                     Nossa agência visa trazer o máximo de conforto e a melhor experiência ao seus clientes, buscando sempre os melhores e mais desejados lugares para viajar, adquirindo novas lembranças e novos desejos para que sua viagem seja única e inesquecível.<br>
                     Nós acreditamos na magia das viagens.<br>
-                    O Caravan Paradise foi conceituado em 2007 em Cruzeiro, no Brasil, por seis amigos universitários: Jhonatan Chagas, Luisa Couto, Mateus Leal, Mateus Leonardo, Vitória Narciso e Pedro Bulhões. Somos um grupo bastante diversificado, mas a nossa cultura é o nosso terreno comum.<br>
+                    O Caravan Paradise foi conceituado em 2007 em Cruzeiro, no Brasil, por seis amigos universitários: Jhonatan Luiz, Luisa Couto, Mateus Leal, Mateus Leonardo, Vitória Narciso e Pedro Bulhões. Somos um grupo bastante diversificado, mas a nossa cultura é o nosso terreno comum.<br>
                     Misture isso com a nossa visão empreendedora, estrutura ágil e horas de trabalho autodeterminadas e teremos a receita vencedora para manter os talentos motivados e produtivos.<br>
                     Com esse sonho a empresa nasceu, com a missão de levar o melhor do mundo, proporcionando o incrível paraíso de viajar ao nossos clientes.<br>
                     Mas o mais legal é que nossos clientes vão para todos os lugares do mundo, mas sempre voltam para o Caravan, onde eles sabem que sempre poderão confiar.<br>
