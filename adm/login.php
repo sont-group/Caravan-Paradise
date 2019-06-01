@@ -59,7 +59,7 @@ if ($op == "login") {
           <div class="text-center">
            <!-- <a class="d-block small mt-3" href="register.html">Registar Conta</a> -->
            <br>
-            <a onclick="javascript:alert('Enviaremos um email para alteração da senha')"class="d-block small" href="">Esqueceu a Senha?</a>
+          <!--   <a onclick="javascript:alert('Enviaremos um email para alteração da senha')"class="d-block small" href="">Esqueceu a Senha?</a> -->
           </div>
         </div>
       </div>
