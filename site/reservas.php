@@ -119,7 +119,7 @@ if ($op == "reservas") {
 
             </div>
 
-            <br><br><br>
+            <br><br><br><br><br>
 
 <div class="center">
 

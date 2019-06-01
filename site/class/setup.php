@@ -229,12 +229,10 @@ public function footer()
 
     <footer class="rodape">
         <br>
-        <div class="col-12">
+        <div class="conteiner col-12">
             <div class="row">
-                <div class="col-11">
-                    &copy; 2019 - Caravan Paradise. Todos os direitos reservados.
-                </div>
-                <div class="col-5">
+                
+                <div class="col-md-4">
                     <h5 class="widget_title">Contato</h5>
                     <div class="contacts_wrap">
                         <div class="contacts_info">
@@ -246,13 +244,13 @@ public function footer()
                         </div>
                     </div>
                 </div>
-                <div id = "icones-rodape">
-                    <a class="facebook_directin" href="#">
-                        <img width="40px" class="img-fluid" src="images/facebook_icon.png">
-                    </a>
-                    <a class="instagram_icon" href="#">
-                        <img width="40px" class="img-fluid" src="images/instagram-icon.png">
-                    </a>
+                <div class="col-md-4 rodape_item">
+                   <h5 > &copy; 2019 - Caravan Paradise. Todos os direitos reservados. </h5>
+                </div>
+                <div class='col-md-4 rodape_item'>
+                <h5 class="">Redes Sociais</h5>
+                <i style="color:#3B5998; font-size: 45px;" class="fab fa-facebook-square"></i>
+                <i style="color:#CB0866; font-size: 45px;" class="fab fa-instagram"></i>                  
                 </div>
             </div>
         </div>
