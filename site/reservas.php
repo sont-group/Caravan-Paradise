@@ -119,7 +119,15 @@ if ($op == "reservas") {
 
             </div>
 
+            <br><br><br>
 
+<div class="center">
+
+    <?php
+    $setup->footer();
+    ?>
+
+</div>
 
             <!-- Bootstrap core JavaScript -->
             <script src="js/jquery.js"></script>
