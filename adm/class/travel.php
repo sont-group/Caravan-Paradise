@@ -392,7 +392,7 @@ public function tabUpdate($nomeOld, $nome, $origem, $destino, $hotel, $preco, $d
             ':imagens' => $imagens,
             ':nomeOld' => $nomeOld
         ));
-
+        $nome = utf8_encode($nome);
         // echo $stmt->rowCount();
     } catch (PDOException $e) {
         // echo 'Error: ' . $e->getMessage();
