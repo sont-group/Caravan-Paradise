@@ -19,10 +19,6 @@
   
 </head>
 
-<style>
-
-</style>
-
 <body>
 
   <?php include_once('class/setup.php');
