@@ -202,7 +202,7 @@
 
             </div>
             <label>
-              <input onclick="alert('Sua compra será analizada\nEntraremos em contato assim que possível');location.href = 'index.php';" value="Finalizar compra" class="btn">       
+              <input onclick="alert('Compra finalizada com sucesso');location.href = 'index.php';" value="Finalizar compra" class="btn">       
           </form>
         </div>
       </div>
