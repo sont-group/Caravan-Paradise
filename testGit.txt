@@ -1,0 +1,20 @@
+Passo a passo de como usar o caravanBD na gerencia de viagens e clientes;
+
+Requisitos:
+	- Xampp
+	- GitHub
+
+Iniciando:
+	- abra o github e clone o projeto para a pasta do htdocs dentro da pasta xampp  (xampp\htdocs\)
+	- abra o painel de controle do xampp e inicie o servidor Apache e MySQL
+	- no navegador entre no phpmyadmin (http://localhost/phpmyadmin/)
+	- crie um banco de dados com o nome de caravanbd, com a configuracao em utf8_general_ci
+	- com o banco criado, clique nele e em seguida importar, com isso escolha o arquivo que esta dentro do projeto na pasta
+BD (caravanbd.sql), com o arquivo selecionado, execute o codigo (Executar)
+	- pronto, agora e so entrar no site do caravanbd hopedado no xampp (digite no navegador http://localhost/Projeto-2-semestre/adm/index.php) 
+	- para acessar o site do usuario http://localhost/Projeto-2-semestre/
+
+login: admin
+senha: admin
+
+OBS: se nao haver viagens cadastradas pode ser que ocorra algum erro com a interface do cliente, para corrigir esse problema basta cadastrar uma viagem no caravanbd
